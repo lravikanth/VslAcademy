@@ -5,7 +5,11 @@
   "projects": {
     "VslAcademy-SPA": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -24,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -89,7 +93,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -120,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "VslAcademy-SPA"
+    }
+  },
+  "defaultProject": "VslAcademy-SPA",
+  "cli": {
+    "analytics": "3a868107-2b3d-48ff-8ba4-6155a3b2875e"
+  }
 }

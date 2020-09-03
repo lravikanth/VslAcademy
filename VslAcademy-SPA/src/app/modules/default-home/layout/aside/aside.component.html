@@ -1,0 +1,355 @@
+<!--begin::Brand-->
+<div class="brand flex-column-auto" id="kt_brand" [ngClass]="brandClasses">
+  <!--begin::Logo-->
+  <a routerLink="/" class="brand-logo" >
+    <img alt="Logo" [attr.src]="headerLogo" style="width: 200px; height: 220px;" />
+  </a>
+  <!--end::Logo-->
+
+  <ng-container *ngIf="asideSelfMinimizeToggle">
+    <button class="brand-toggle btn btn-sm px-0" id="kt_aside_toggle">
+      <span
+        [inlineSVG]="
+          './assets/media/svg/icons/Navigation/Angle-double-left.svg'
+        "
+        cacheSVG="true"
+        class="svg-icon svg-icon-xl"
+      ></span>
+    </button>
+  </ng-container>
+</div>
+<!--end::Brand-->
+
+<!--begin::Aside Menu-->
+<div class="aside-menu-wrapper flex-column-fluid" id="kt_aside_menu_wrapper">
+  <ng-container *ngIf="disableAsideSelfDisplay">
+    <!--begin::Header Logo-->
+    <a routerLink="/" >
+      <img alt="Logo" [attr.src]="headerLogo" style="width: 200px; height: 220px;" />
+    </a>
+    <!--end::Header Logo-->
+  </ng-container>
+  <!--begin::Menu Container-->
+  <div
+    id="kt_aside_menu"
+    class="aside-menu scroll my-4 ps ps--active-y"
+    [ngClass]="asideMenuCSSClasses"
+    data-menu-vertical="1"
+    data-menu-scroll="1"
+    [attr.data-menu-scroll]="asideMenuScroll"
+    data-menu-dropdown-timeout="500"
+  >
+    <!-- begin::Menu Nav -->
+    <ul class="menu-nav" [ngClass]="ulCSSClasses">
+      <!-- begin::1 Level -->
+      <li
+        class="menu-item"
+        aria-haspopup="true"
+        routerLinkActive="menu-item-active"
+      >
+        <a class="menu-link" routerLink="/dashboard" routerLinkActive="active">
+          <span
+            [inlineSVG]="'./assets/media/svg/icons/Design/Layers.svg'"
+            cacheSVG="true"
+            class="svg-icon menu-icon"
+          ></span>
+          <span class="menu-text">Dashboard</span>
+        </a>
+      </li>
+      <!-- end::1 Level -->
+
+
+
+  
+      <li
+        class="menu-item menu-item-submenu"
+        aria-haspopup="true"
+        data-menu-toggle="hover"
+        routerLinkActive="menu-item-open"
+        *ngIf="this.auth.hasAccessTo(permissions.ContentManagement)"
+      >
+        <a
+          class="menu-link menu-toggle"
+          href="/material"
+          routerLinkActive="active"
+        >
+          <span
+            [inlineSVG]="'./assets/media/svg/icons/Design/Cap-2.svg'"
+            cacheSVG="true"
+            class="svg-icon menu-icon"
+          ></span>
+          <span class="menu-text">Content Management</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="menu-submenu">
+          <i class="menu-arrow"></i>
+          <ul class="menu-subnav">
+            <li class="menu-item menu-item-parent" aria-haspopup="true">
+              <span class="menu-link">
+                <span class="menu-text">Content Management<</span>
+              </span>
+            </li>
+
+            <!-- Form Controls -->
+            <!-- begin::2 Level -->
+            <li
+              class="menu-item menu-item-submenu"
+              aria-haspopup="true"
+              data-menu-toggle="hover"
+              routerLinkActive="menu-item-open"
+              *ngIf="this.auth.hasAccessTo(permissions.Courses)"
+            >
+              <a
+                class="menu-link menu-toggle"
+                [routerLink]="['/managedomains']" 
+                routerLinkActive="active"
+              >
+                <i class="menu-bullet menu-bullet-dot">
+                  <span></span>
+                </i>
+                <span class="menu-text">Courses</span>
+                <i class="menu-arrow"></i>
+              </a>
+            </li>
+            <li
+            class="menu-item menu-item-submenu"
+            aria-haspopup="true"
+            data-menu-toggle="hover"
+            routerLinkActive="menu-item-open"
+            *ngIf="this.auth.hasAccessTo(permissions.Courses)"
+          >
+            <a
+              class="menu-link menu-toggle"
+              [routerLink]="['/manageskills']" 
+              routerLinkActive="active"
+            >
+              <i class="menu-bullet menu-bullet-dot">
+                <span></span>
+              </i>
+              <span class="menu-text">Manage Skills</span>
+              <i class="menu-arrow"></i>
+            </a>
+          </li>
+            <li
+              class="menu-item menu-item-submenu"
+              routerLinkActive="menu-item-open"
+              aria-haspopup="true"
+              data-menu-toggle="hover"
+              *ngIf="this.auth.hasAccessTo(permissions.Questions)"
+            >
+              <a
+                class="menu-link menu-toggle"
+                routerLinkActive="active"
+                href="/material/navigation"
+              >
+                <i class="menu-bullet menu-bullet-dot">
+                  <span></span>
+                </i>
+                <span class="menu-text">Questions</span>
+                <i class="menu-arrow"></i>
+              </a>
+            </li>
+            <!-- end::2 Level -->
+            <!-- Layout -->
+            <!-- begin::2 Level -->
+            <li
+              class="menu-item menu-item-submenu"
+              routerLinkActive="menu-item-open"
+              aria-haspopup="true"
+              data-menu-toggle="hover"
+              *ngIf="this.auth.hasAccessTo(permissions.SkillAssessment)"
+            >
+              <a
+                class="menu-link menu-toggle"
+                href="/material/layout"
+                routerLinkActive="active"
+              >
+                <i class="menu-bullet menu-bullet-dot">
+                  <span></span>
+                </i>
+                <span class="menu-text">Skill Assessment</span>
+                <i class="menu-arrow"></i>
+              </a>
+           
+            </li>
+          </ul>
+        </div>
+      </li>
+      <!-- end::1 Level -->
+
+      <li
+      class="menu-item menu-item-submenu"
+      aria-haspopup="true"
+      data-menu-toggle="hover"
+      routerLinkActive="menu-item-open"
+      *ngIf="this.auth.hasAccessTo(permissions.Classes)"
+    >
+      <a
+        class="menu-link menu-toggle"
+        href="/material"
+        routerLinkActive="active"
+      > 
+        <span
+          cacheSVG="true"
+          class="svg-icon menu-icon"
+        > <i class="fas fa-calendar-alt" style="--fa-primary-color: blue" aria-hidden="true"></i></span>
+        <span class="menu-text">Classes</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="menu-submenu">
+        <i class="menu-arrow"></i>
+        <ul class="menu-subnav">
+          <li class="menu-item menu-item-parent" aria-haspopup="true">
+            <span class="menu-link">
+              <span class="menu-text">Classes<</span>
+            </span>
+          </li>
+
+          <!-- Form Controls -->
+          <!-- begin::2 Level -->
+          <li
+            class="menu-item menu-item-submenu"
+            aria-haspopup="true"
+            data-menu-toggle="hover"
+            routerLinkActive="menu-item-open"
+            *ngIf="this.auth.hasAccessTo(permissions.Schedule)"
+          >
+            <a
+              class="menu-link menu-toggle"
+              href="/material/form-controls"
+              routerLinkActive="active"
+            >
+              <i class="menu-bullet menu-bullet-dot">
+                <span></span>
+              </i>
+              <span class="menu-text">Schedule</span>
+              <i class="menu-arrow"></i>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </li>
+
+    <li
+    class="menu-item menu-item-submenu"
+    aria-haspopup="true"
+    data-menu-toggle="hover"
+    routerLinkActive="menu-item-open"
+    *ngIf="this.auth.hasAccessTo(permissions.StudentManagement)"
+  >
+    <a
+      class="menu-link menu-toggle"
+      href="/material"
+      routerLinkActive="active"
+    >
+      <span
+        [inlineSVG]="'./assets/media/svg/icons/Communication/Group.svg'"
+        cacheSVG="true"
+        class="svg-icon menu-icon"
+      >  </span>
+      <span class="menu-text">Student Management</span>
+      <i class="menu-arrow"></i>
+    </a>
+    <div class="menu-submenu">
+      <i class="menu-arrow"></i>
+      <ul class="menu-subnav">
+        <li class="menu-item menu-item-parent" aria-haspopup="true">
+          <span class="menu-link">
+            <span class="menu-text">Student Management<</span>
+          </span>
+        </li>
+
+        <!-- Form Controls -->
+        <!-- begin::2 Level -->
+        <li
+          class="menu-item menu-item-submenu"
+          aria-haspopup="true"
+          data-menu-toggle="hover"
+          routerLinkActive="menu-item-open"
+          *ngIf="this.auth.hasAccessTo(permissions.ReviewAssignments)"
+        >
+          <a
+            class="menu-link menu-toggle"
+            href="/material/form-controls"
+            routerLinkActive="active"
+          >
+            <i class="menu-bullet menu-bullet-dot">
+              <span></span>
+            </i>
+            <span class="menu-text">Review Assignments</span>
+            <i class="menu-arrow"></i>
+          </a>
+        </li>
+        <!-- end::2 Level -->
+        <!-- Navigation -->
+        <!-- begin::2 Level -->
+        <li
+          class="menu-item menu-item-submenu"
+          routerLinkActive="menu-item-open"
+          aria-haspopup="true"
+          data-menu-toggle="hover"
+          *ngIf="this.auth.hasAccessTo(permissions.ManageAssignments)"
+        >
+          <a
+            class="menu-link menu-toggle"
+            routerLinkActive="active"
+            href="/material/navigation"
+          >
+            <i class="menu-bullet menu-bullet-dot">
+              <span></span>
+            </i>
+            <span class="menu-text">Manage Assignments</span>
+            <i class="menu-arrow"></i>
+          </a>
+        </li>
+        <!-- end::2 Level -->
+        <!-- Layout -->
+        <!-- begin::2 Level -->
+        <li
+          class="menu-item menu-item-submenu"
+          routerLinkActive="menu-item-open"
+          aria-haspopup="true"
+          data-menu-toggle="hover"
+          *ngIf="this.auth.hasAccessTo(permissions.ViewPerformance)"
+        >
+          <a
+            class="menu-link menu-toggle"
+            href="/material/layout"
+            routerLinkActive="active"
+          >
+            <i class="menu-bullet menu-bullet-dot">
+              <span></span>
+            </i>
+            <span class="menu-text">View Performance</span>
+            <i class="menu-arrow"></i>
+          </a>
+       
+        </li>
+
+
+      </ul>
+    </div>
+  </li>
+
+ <li
+        class="menu-item"
+        aria-haspopup="true"
+        routerLinkActive="menu-item-active"
+        *ngIf="this.auth.hasAccessTo(permissions.Payments)"
+      >
+        <a class="menu-link" routerLink="/payments" routerLinkActive="active">
+          <span
+            [inlineSVG]="'./assets/media/svg/icons/Shopping/Money.svg'"
+            cacheSVG="true"
+            class="svg-icon menu-icon"
+          ></span>
+          <span class="menu-text">Payments</span>
+        </a>
+      </li>
+    </ul>
+    <!-- end::Menu Nav -->
+  </div>
+  <!--end::Menu Container-->
+</div>
+<!--end::Aside Menu-->

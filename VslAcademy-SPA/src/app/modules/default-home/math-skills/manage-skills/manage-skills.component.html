@@ -1,0 +1,62 @@
+
+ <form #createForm="ngForm" [formGroup]="skillsForm">
+  <div class="row">
+    <div class="col-sm">
+      <mat-form-field>
+        <mat-select placeholder="Domain Area" [(ngModel)]="selectedDomain" name="domain" required  formControlName="domainSelect" (selectionChange)="domainChange(selectedDomain)">
+          <mat-option *ngFor="let domain of domains" [value]="domain.id">
+            {{domain.domain}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-sm">
+      <mat-form-field>
+        <mat-select placeholder="Gade" [(ngModel)]="selectedGrade" name="grade" required formControlName="gradeSelect" (selectionChange)="gradeChange(selectedGrade)">
+          <mat-option [value]="">--</mat-option>
+          <mat-option *ngFor="let grade of grades" [value]="grade.id">
+            {{grade.grade}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-sm">
+      <mat-form-field>
+        <mat-select placeholder="Sub Domain" [(ngModel)]="selectedSubDomain" panelClass="my-panel" name="subDomain" required formControlName="subDomainSelect" (selectionChange)="captureText($event)">
+          <mat-option [value]="">--</mat-option>
+          <mat-option *ngFor="let item of subDomain" [value]="item.id">
+            {{item.subDomain}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+      <div class="col-sm right-aligned">
+        <button mat-raised-button color="primary" (click)="getSkills()">Get Skills</button>
+     </div>
+  </div>
+</form>
+<!-- <div class="row alert alert-warning"  *ngIf="!allValuesSelected">
+  Domain, Grade and Sub domain are required
+</div> -->
+<br>
+<div *ngIf="allValuesSelected">
+  <h5 class="card-label"><button mat-raised-button color="primary" (click)="addSkill()">Add Skill</button> &nbsp; for sub domain: &nbsp; {{selectSubdomainText}}.</h5>
+</div>
+  <br>
+<div class=".container-fluid">
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let skill of skills" [disabled]="true">
+    <mat-expansion-panel-header> 
+      <mat-panel-title>
+       <p class="text-dark"> {{ skill.skillName }}</p> 
+      </mat-panel-title>
+      <mat-panel-description  class="right-aligned">
+        <div class="actions" >
+        <span   (click)="editSkill(skill)"><i class="fas fa-edit btn btn-success fa-3x"></i></span>
+      </div>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+
+</mat-accordion>
+</div>

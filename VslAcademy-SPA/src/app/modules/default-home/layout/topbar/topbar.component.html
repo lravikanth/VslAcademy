@@ -1,0 +1,70 @@
+<!--begin::Topbar-->
+
+
+
+  
+<div class="dropdown" ngbDropdown placement="bottom"   #userMessages="ngbDropdown" class="topbar-item" data-toggle="dropdown" data-offset="10px,0px"    >
+  <div
+  class="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2 mr-1"
+  id="dropdownManual" ngbDropdownToggle>
+      <span
+      class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3"
+      >Notifications</span>
+      <span
+      [inlineSVG]="'./assets/media/svg/icons/Communication/Chat1.svg'"
+      cacheSVG="true"
+      class="svg-icon svg-icon-xl svg-icon-primary"
+    ></span>
+    </div>
+    <div ngbDropdownMenu aria-labelledby="dropdownManual" class="menu-submenu menu-submenu-left">
+      <button class="dropdown-item">Action - 1</button>
+      <button class="dropdown-item">Another Action</button>
+      <button class="dropdown-item">Something else is here</button>
+    </div>
+  </div>
+
+
+
+    <div class="dropdown" ngbDropdown placement="bottom"   #userNotifications="ngbDropdown" class="topbar-item" data-toggle="dropdown" data-offset="10px,0px"    >
+      <div
+      class="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2 mr-1"
+      id="dropdownManual" ngbDropdownToggle>
+          <span
+          class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3"
+          >Notifications</span>
+          <span
+          [inlineSVG]="'./assets/media/svg/icons/General/Notifications1.svg'"
+          cacheSVG="true"
+          class="svg-icon svg-icon-xl svg-icon-primary"
+        ></span>
+        </div>
+        <div ngbDropdownMenu aria-labelledby="dropdownManual" class="menu-submenu menu-submenu-left">
+          <button class="dropdown-item">Action - 1</button>
+          <button class="dropdown-item">Another Action</button>
+          <button class="dropdown-item">Something else is here</button>
+        </div>
+      </div>
+    <!--end::Quick Actions-->
+
+    <div class="dropdown" ngbDropdown placement="bottom"   #userProfile="ngbDropdown" class="topbar-item" data-toggle="dropdown" data-offset="10px,0px"    >
+      <div
+      class="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2 mr-1"
+      id="dropdownManual" ngbDropdownToggle>
+          <span
+          class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3"
+          >Hi, {{ this.auth.getFirstLastName() }}</span>
+          <span
+          [inlineSVG]="'./assets/media/svg/icons/General/User.svg'"
+          cacheSVG="true"
+          class="svg-icon svg-icon-xl svg-icon-primary"
+        ></span>
+        </div>
+        <div ngbDropdownMenu aria-labelledby="dropdownManual" class="menu-submenu menu-submenu-left">
+          <button class="dropdown-item">Profile</button>
+          <button class="dropdown-item">Settings</button>
+          <button class="dropdown-item" (click) = "logOff()">Log Off</button>
+          
+        </div>
+      </div>
+
+   

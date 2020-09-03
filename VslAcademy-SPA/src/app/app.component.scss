@@ -1,0 +1,13 @@
+mat-panel-description.right-aligned {
+    flex-grow: 0;
+  }
+  .alt {
+    .mat-form-field {
+      width: auto !important;
+    }
+  
+    .mat-select-value {
+      max-width: 100%;
+      width: auto;
+    } 
+  }

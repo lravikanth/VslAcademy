@@ -1,0 +1,783 @@
+2020-08-24 10:53:13.1728||||INF|Application Starting up
+2020-08-24 10:53:13.9983|||Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|INF|User profile is available. Using 'C:\Users\Ravikanth\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-08-24 10:53:14.4771|||Microsoft.Hosting.Lifetime|INF|Now listening on: http://localhost:5000
+2020-08-24 10:53:14.4792|||Microsoft.Hosting.Lifetime|INF|Application started. Press Ctrl+C to shut down.
+2020-08-24 10:53:14.4810|||Microsoft.Hosting.Lifetime|INF|Hosting environment: Development
+2020-08-24 10:53:14.4914|||Microsoft.Hosting.Lifetime|INF|Content root path: E:\VSLAcademy\CodeBase\VslAcademy.API
+2020-08-24 10:53:23.6253||0HM287LPIUNQC:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login  
+2020-08-24 10:53:23.7312||0HM287LPIUNQC:00000001|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 10:53:23.7572|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP OPTIONS /api/auth/login responded 204 in 72.0885 ms
+2020-08-24 10:53:23.7892||0HM287LPIUNQC:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 170.1176ms 204 
+2020-08-24 10:53:23.8356||0HM287LPIUNQC:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 47
+2020-08-24 10:53:23.8644||0HM287LPIUNQC:00000002|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 10:53:23.8692||0HM287LPIUNQC:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 10:53:23.9749||0HM287LPIUNQC:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 10:53:24.8367||0HM287LPIUNQC:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 10:53:25.7862||0HM287LPIUNQC:00000002|Microsoft.EntityFrameworkCore.Model.Validation|WRN|Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.
+2020-08-24 10:53:25.9112||0HM287LPIUNQC:00000002|Microsoft.EntityFrameworkCore.Infrastructure|INF|Entity Framework Core 3.1.7 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2020-08-24 10:53:26.9960||0HM287LPIUNQC:00000002|Microsoft.EntityFrameworkCore.Database.Command|INF|Executed DbCommand (107ms) [Parameters=[@__username_0='lravikanth' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[City], [u].[Country], [u].[Created], [u].[DateOfBirth], [u].[Email], [u].[Gender], [u].[LastActivity], [u].[PasswordHash], [u].[PasswordSalt], [u].[State], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0
+2020-08-24 10:53:27.4426||0HM287LPIUNQC:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2594.7662ms.
+2020-08-24 10:53:27.5002||0HM287LPIUNQC:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INF|Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-08-24 10:53:27.6580||0HM287LPIUNQC:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 3663.996ms
+2020-08-24 10:53:27.6623||0HM287LPIUNQC:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 10:53:27.6737|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP POST /api/auth/login responded 200 in 3809.7984 ms
+2020-08-24 10:53:27.7442||0HM287LPIUNQC:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 3908.6926ms 200 application/json; charset=utf-8
+2020-08-24 11:26:18.9762||0HM287LPIUNQD:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login  
+2020-08-24 11:26:18.9824||0HM287LPIUNQD:00000001|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:26:18.9856|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP OPTIONS /api/auth/login responded 204 in 5.4973 ms
+2020-08-24 11:26:18.9896||0HM287LPIUNQD:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 13.9827ms 204 
+2020-08-24 11:26:18.9941||0HM287LPIUNQD:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 23
+2020-08-24 11:26:18.9973||0HM287LPIUNQD:00000002|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:26:18.9996||0HM287LPIUNQD:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:26:19.0027||0HM287LPIUNQD:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 11:26:19.0103||0HM287LPIUNQD:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 11:26:19.0599||0HM287LPIUNQD:00000002|Microsoft.EntityFrameworkCore.Infrastructure|INF|Entity Framework Core 3.1.7 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2020-08-24 11:26:19.0789||0HM287LPIUNQD:00000002|Microsoft.EntityFrameworkCore.Database.Command|INF|Executed DbCommand (4ms) [Parameters=[@__username_0='password' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[City], [u].[Country], [u].[Created], [u].[DateOfBirth], [u].[Email], [u].[Gender], [u].[LastActivity], [u].[PasswordHash], [u].[PasswordSalt], [u].[State], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0
+2020-08-24 11:26:19.0887||0HM287LPIUNQD:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 76.2225ms.
+2020-08-24 11:26:19.0916||0HM287LPIUNQD:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INF|Executing ObjectResult, writing value of type 'System.String'.
+2020-08-24 11:26:19.0950||0HM287LPIUNQD:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 87.8614ms
+2020-08-24 11:26:19.0979||0HM287LPIUNQD:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:26:19.1001|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP POST /api/auth/login responded 401 in 103.0753 ms
+2020-08-24 11:26:19.1039||0HM287LPIUNQD:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 110.1415ms 401 text/plain; charset=utf-8
+2020-08-24 11:28:02.8136||0HM287LPIUNQD:00000003|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login  
+2020-08-24 11:28:02.8218||0HM287LPIUNQD:00000003|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:28:02.8249|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP OPTIONS /api/auth/login responded 204 in 4.3340 ms
+2020-08-24 11:28:02.8326||0HM287LPIUNQD:00000003|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 16.9589ms 204 
+2020-08-24 11:28:02.8423||0HM287LPIUNQD:00000004|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 23
+2020-08-24 11:28:02.8455||0HM287LPIUNQD:00000004|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:28:02.8472||0HM287LPIUNQD:00000004|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:28:02.8498||0HM287LPIUNQD:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 11:28:02.8630||0HM287LPIUNQD:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 11:28:02.8852||0HM287LPIUNQD:00000004|Microsoft.EntityFrameworkCore.Infrastructure|INF|Entity Framework Core 3.1.7 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2020-08-24 11:28:02.8993||0HM287LPIUNQD:00000004|Microsoft.EntityFrameworkCore.Database.Command|INF|Executed DbCommand (7ms) [Parameters=[@__username_0='sadfsadf' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[City], [u].[Country], [u].[Created], [u].[DateOfBirth], [u].[Email], [u].[Gender], [u].[LastActivity], [u].[PasswordHash], [u].[PasswordSalt], [u].[State], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0
+2020-08-24 11:28:02.9071||0HM287LPIUNQD:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 42.1733ms.
+2020-08-24 11:28:02.9102||0HM287LPIUNQD:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INF|Executing ObjectResult, writing value of type 'System.String'.
+2020-08-24 11:28:02.9129||0HM287LPIUNQD:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 56.8798ms
+2020-08-24 11:28:02.9154||0HM287LPIUNQD:00000004|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:28:02.9187|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP POST /api/auth/login responded 401 in 73.9781 ms
+2020-08-24 11:28:02.9221||0HM287LPIUNQD:00000004|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 79.9176ms 401 text/plain; charset=utf-8
+2020-08-24 11:28:36.8378||0HM287LPIUNQD:00000005|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login  
+2020-08-24 11:28:36.8431||0HM287LPIUNQD:00000005|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:28:36.8464|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP OPTIONS /api/auth/login responded 204 in 4.2176 ms
+2020-08-24 11:28:36.8538||0HM287LPIUNQD:00000005|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 17.5853ms 204 
+2020-08-24 11:28:36.8621||0HM287LPIUNQD:00000006|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 23
+2020-08-24 11:28:36.8643||0HM287LPIUNQD:00000006|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:28:36.8661||0HM287LPIUNQD:00000006|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:28:36.8730||0HM287LPIUNQD:00000006|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 11:28:36.8788||0HM287LPIUNQD:00000006|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 11:28:36.8821||0HM287LPIUNQD:00000006|Microsoft.EntityFrameworkCore.Infrastructure|INF|Entity Framework Core 3.1.7 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2020-08-24 11:28:36.8938||0HM287LPIUNQD:00000006|Microsoft.EntityFrameworkCore.Database.Command|INF|Executed DbCommand (4ms) [Parameters=[@__username_0='asdfasdf' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[City], [u].[Country], [u].[Created], [u].[DateOfBirth], [u].[Email], [u].[Gender], [u].[LastActivity], [u].[PasswordHash], [u].[PasswordSalt], [u].[State], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0
+2020-08-24 11:28:36.9069||0HM287LPIUNQD:00000006|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 25.8964ms.
+2020-08-24 11:28:36.9104||0HM287LPIUNQD:00000006|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INF|Executing ObjectResult, writing value of type 'System.String'.
+2020-08-24 11:28:36.9131||0HM287LPIUNQD:00000006|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 36.5456ms
+2020-08-24 11:28:36.9165||0HM287LPIUNQD:00000006|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:28:36.9203|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP POST /api/auth/login responded 401 in 56.5808 ms
+2020-08-24 11:28:36.9236||0HM287LPIUNQD:00000006|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 61.959ms 401 text/plain; charset=utf-8
+2020-08-24 11:29:18.8816||0HM287LPIUNQD:00000007|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login  
+2020-08-24 11:29:18.8870||0HM287LPIUNQD:00000007|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:29:18.8897|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP OPTIONS /api/auth/login responded 204 in 3.4601 ms
+2020-08-24 11:29:18.8950||0HM287LPIUNQD:00000007|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 13.533ms 204 
+2020-08-24 11:29:18.9008||0HM287LPIUNQD:00000008|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 23
+2020-08-24 11:29:18.9060||0HM287LPIUNQD:00000008|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:29:18.9079||0HM287LPIUNQD:00000008|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:29:18.9109||0HM287LPIUNQD:00000008|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 11:29:18.9206||0HM287LPIUNQD:00000008|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 11:29:18.9258||0HM287LPIUNQD:00000008|Microsoft.EntityFrameworkCore.Infrastructure|INF|Entity Framework Core 3.1.7 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2020-08-24 11:29:18.9393||0HM287LPIUNQD:00000008|Microsoft.EntityFrameworkCore.Database.Command|INF|Executed DbCommand (5ms) [Parameters=[@__username_0='asdfasdf' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[City], [u].[Country], [u].[Created], [u].[DateOfBirth], [u].[Email], [u].[Gender], [u].[LastActivity], [u].[PasswordHash], [u].[PasswordSalt], [u].[State], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0
+2020-08-24 11:29:18.9488||0HM287LPIUNQD:00000008|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 25.337ms.
+2020-08-24 11:29:18.9545||0HM287LPIUNQD:00000008|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INF|Executing ObjectResult, writing value of type 'System.String'.
+2020-08-24 11:29:18.9584||0HM287LPIUNQD:00000008|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 42.4598ms
+2020-08-24 11:29:18.9623||0HM287LPIUNQD:00000008|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:29:18.9664|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP POST /api/auth/login responded 401 in 61.4822 ms
+2020-08-24 11:29:18.9714||0HM287LPIUNQD:00000008|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 71.1766ms 401 text/plain; charset=utf-8
+2020-08-24 11:29:37.0519||0HM287LPIUNQD:00000009|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login  
+2020-08-24 11:29:37.0568||0HM287LPIUNQD:00000009|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:29:37.0587|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP OPTIONS /api/auth/login responded 204 in 2.2029 ms
+2020-08-24 11:29:37.0619||0HM287LPIUNQD:00000009|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 10.8516ms 204 
+2020-08-24 11:29:37.0667||0HM287LPIUNQD:0000000A|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 23
+2020-08-24 11:29:37.0716||0HM287LPIUNQD:0000000A|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:29:37.0734||0HM287LPIUNQD:0000000A|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:29:37.0758||0HM287LPIUNQD:0000000A|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 11:29:37.0811||0HM287LPIUNQD:0000000A|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 11:29:37.0851||0HM287LPIUNQD:0000000A|Microsoft.EntityFrameworkCore.Infrastructure|INF|Entity Framework Core 3.1.7 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2020-08-24 11:29:37.0950||0HM287LPIUNQD:0000000A|Microsoft.EntityFrameworkCore.Database.Command|INF|Executed DbCommand (4ms) [Parameters=[@__username_0='password' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[City], [u].[Country], [u].[Created], [u].[DateOfBirth], [u].[Email], [u].[Gender], [u].[LastActivity], [u].[PasswordHash], [u].[PasswordSalt], [u].[State], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0
+2020-08-24 11:29:37.1009||0HM287LPIUNQD:0000000A|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 17.6843ms.
+2020-08-24 11:29:37.1055||0HM287LPIUNQD:0000000A|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INF|Executing ObjectResult, writing value of type 'System.String'.
+2020-08-24 11:29:37.1087||0HM287LPIUNQD:0000000A|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 29.8777ms
+2020-08-24 11:29:37.1122||0HM287LPIUNQD:0000000A|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:29:37.1149|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP POST /api/auth/login responded 401 in 43.4914 ms
+2020-08-24 11:29:37.1201||0HM287LPIUNQD:0000000A|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 54.1092ms 401 text/plain; charset=utf-8
+2020-08-24 11:30:34.8351||0HM287LPIUNQD:0000000B|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login  
+2020-08-24 11:30:34.8410||0HM287LPIUNQD:0000000B|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:30:34.8431|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP OPTIONS /api/auth/login responded 204 in 3.4625 ms
+2020-08-24 11:30:34.8469||0HM287LPIUNQD:0000000B|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 12.9546ms 204 
+2020-08-24 11:30:34.8573||0HM287LPIUNQD:0000000C|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 48
+2020-08-24 11:30:34.8597||0HM287LPIUNQD:0000000C|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:30:34.8616||0HM287LPIUNQD:0000000C|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:30:34.8641||0HM287LPIUNQD:0000000C|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 11:30:34.8729||0HM287LPIUNQD:0000000C|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 11:30:34.8774||0HM287LPIUNQD:0000000C|Microsoft.EntityFrameworkCore.Infrastructure|INF|Entity Framework Core 3.1.7 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2020-08-24 11:30:34.8887||0HM287LPIUNQD:0000000C|Microsoft.EntityFrameworkCore.Database.Command|INF|Executed DbCommand (6ms) [Parameters=[@__username_0='lravikanth1' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[City], [u].[Country], [u].[Created], [u].[DateOfBirth], [u].[Email], [u].[Gender], [u].[LastActivity], [u].[PasswordHash], [u].[PasswordSalt], [u].[State], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0
+2020-08-24 11:30:34.8981||0HM287LPIUNQD:0000000C|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 22.8516ms.
+2020-08-24 11:30:34.9038||0HM287LPIUNQD:0000000C|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INF|Executing ObjectResult, writing value of type 'System.String'.
+2020-08-24 11:30:34.9067||0HM287LPIUNQD:0000000C|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 36.2756ms
+2020-08-24 11:30:34.9104||0HM287LPIUNQD:0000000C|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:30:34.9127|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP POST /api/auth/login responded 401 in 53.4567 ms
+2020-08-24 11:30:34.9156||0HM287LPIUNQD:0000000C|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 58.3983ms 401 text/plain; charset=utf-8
+2020-08-24 11:32:44.1491||0HM287LPIUNQE:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login  
+2020-08-24 11:32:44.1555||0HM287LPIUNQE:00000001|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:32:44.1576|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP OPTIONS /api/auth/login responded 204 in 3.7365 ms
+2020-08-24 11:32:44.1608||0HM287LPIUNQE:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 11.7729ms 204 
+2020-08-24 11:32:44.1659||0HM287LPIUNQE:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 48
+2020-08-24 11:32:44.1737||0HM287LPIUNQE:00000002|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:32:44.1754||0HM287LPIUNQE:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:32:44.1777||0HM287LPIUNQE:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 11:32:44.1830||0HM287LPIUNQE:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 11:32:44.1876||0HM287LPIUNQE:00000002|Microsoft.EntityFrameworkCore.Infrastructure|INF|Entity Framework Core 3.1.7 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2020-08-24 11:32:44.1961||0HM287LPIUNQE:00000002|Microsoft.EntityFrameworkCore.Database.Command|INF|Executed DbCommand (4ms) [Parameters=[@__username_0='lravikanth1' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[City], [u].[Country], [u].[Created], [u].[DateOfBirth], [u].[Email], [u].[Gender], [u].[LastActivity], [u].[PasswordHash], [u].[PasswordSalt], [u].[State], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0
+2020-08-24 11:32:44.2019||0HM287LPIUNQE:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 15.6228ms.
+2020-08-24 11:32:44.2071||0HM287LPIUNQE:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INF|Executing ObjectResult, writing value of type 'System.String'.
+2020-08-24 11:32:44.2098||0HM287LPIUNQE:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 28.9966ms
+2020-08-24 11:32:44.2132||0HM287LPIUNQE:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:32:44.2168|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP POST /api/auth/login responded 401 in 43.1161 ms
+2020-08-24 11:32:44.2217||0HM287LPIUNQE:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 55.7546ms 401 text/plain; charset=utf-8
+2020-08-24 11:32:49.6604||0HM287LPIUNQE:00000003|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login  
+2020-08-24 11:32:49.7541||0HM287LPIUNQE:00000003|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:32:49.7580|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP OPTIONS /api/auth/login responded 204 in 4.2983 ms
+2020-08-24 11:32:49.7613||0HM287LPIUNQE:00000003|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 101.2794ms 204 
+2020-08-24 11:32:49.7665||0HM287LPIUNQE:00000004|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 48
+2020-08-24 11:32:49.7703||0HM287LPIUNQE:00000004|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:32:49.7731||0HM287LPIUNQE:00000004|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:32:49.7764||0HM287LPIUNQE:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 11:32:49.7933||0HM287LPIUNQE:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 11:32:49.7988||0HM287LPIUNQE:00000004|Microsoft.EntityFrameworkCore.Infrastructure|INF|Entity Framework Core 3.1.7 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2020-08-24 11:32:49.8083||0HM287LPIUNQE:00000004|Microsoft.EntityFrameworkCore.Database.Command|INF|Executed DbCommand (3ms) [Parameters=[@__username_0='lravikanth1' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[City], [u].[Country], [u].[Created], [u].[DateOfBirth], [u].[Email], [u].[Gender], [u].[LastActivity], [u].[PasswordHash], [u].[PasswordSalt], [u].[State], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0
+2020-08-24 11:32:49.8150||0HM287LPIUNQE:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 18.0035ms.
+2020-08-24 11:32:49.8198||0HM287LPIUNQE:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INF|Executing ObjectResult, writing value of type 'System.String'.
+2020-08-24 11:32:49.8226||0HM287LPIUNQE:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 34.023ms
+2020-08-24 11:32:49.8267||0HM287LPIUNQE:00000004|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:32:49.8307|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP POST /api/auth/login responded 401 in 60.9357 ms
+2020-08-24 11:32:49.8365||0HM287LPIUNQE:00000004|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 70.0188ms 401 text/plain; charset=utf-8
+2020-08-24 11:36:13.3551||0HM287LPIUNQF:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login  
+2020-08-24 11:36:13.3591||0HM287LPIUNQF:00000001|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:36:13.3615|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP OPTIONS /api/auth/login responded 204 in 3.1648 ms
+2020-08-24 11:36:13.3653||0HM287LPIUNQF:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 10.2247ms 204 
+2020-08-24 11:36:13.3781||0HM287LPIUNQF:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 46
+2020-08-24 11:36:13.3803||0HM287LPIUNQF:00000002|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:36:13.3827||0HM287LPIUNQF:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:36:13.3871||0HM287LPIUNQF:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 11:36:13.3938||0HM287LPIUNQF:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 11:36:13.3977||0HM287LPIUNQF:00000002|Microsoft.EntityFrameworkCore.Infrastructure|INF|Entity Framework Core 3.1.7 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2020-08-24 11:36:13.4101||0HM287LPIUNQF:00000002|Microsoft.EntityFrameworkCore.Database.Command|INF|Executed DbCommand (4ms) [Parameters=[@__username_0='ravikanth' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[City], [u].[Country], [u].[Created], [u].[DateOfBirth], [u].[Email], [u].[Gender], [u].[LastActivity], [u].[PasswordHash], [u].[PasswordSalt], [u].[State], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0
+2020-08-24 11:36:13.4235||0HM287LPIUNQF:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 27.1952ms.
+2020-08-24 11:36:13.4292||0HM287LPIUNQF:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INF|Executing ObjectResult, writing value of type 'System.String'.
+2020-08-24 11:36:13.4322||0HM287LPIUNQF:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 41.1461ms
+2020-08-24 11:36:13.4387||0HM287LPIUNQF:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:36:13.4425|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP POST /api/auth/login responded 401 in 62.3738 ms
+2020-08-24 11:36:13.4461||0HM287LPIUNQF:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 68.0536ms 401 text/plain; charset=utf-8
+2020-08-24 11:39:57.5282||0HM287LPIUNQG:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login  
+2020-08-24 11:39:57.5321||0HM287LPIUNQG:00000001|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:39:57.5353|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP OPTIONS /api/auth/login responded 204 in 3.5498 ms
+2020-08-24 11:39:57.5390||0HM287LPIUNQG:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 10.8117ms 204 
+2020-08-24 11:39:57.5497||0HM287LPIUNQG:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 46
+2020-08-24 11:39:57.5565||0HM287LPIUNQG:00000002|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:39:57.5586||0HM287LPIUNQG:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:39:57.5610||0HM287LPIUNQG:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 11:39:57.5680||0HM287LPIUNQG:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 11:39:57.5716||0HM287LPIUNQG:00000002|Microsoft.EntityFrameworkCore.Infrastructure|INF|Entity Framework Core 3.1.7 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2020-08-24 11:39:57.5802||0HM287LPIUNQG:00000002|Microsoft.EntityFrameworkCore.Database.Command|INF|Executed DbCommand (4ms) [Parameters=[@__username_0='ravikanth' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[City], [u].[Country], [u].[Created], [u].[DateOfBirth], [u].[Email], [u].[Gender], [u].[LastActivity], [u].[PasswordHash], [u].[PasswordSalt], [u].[State], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0
+2020-08-24 11:39:57.5884||0HM287LPIUNQG:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 17.8963ms.
+2020-08-24 11:39:57.5919||0HM287LPIUNQG:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INF|Executing ObjectResult, writing value of type 'System.String'.
+2020-08-24 11:39:57.5947||0HM287LPIUNQG:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 30.4894ms
+2020-08-24 11:39:57.5991||0HM287LPIUNQG:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:39:57.6014|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP POST /api/auth/login responded 401 in 45.3712 ms
+2020-08-24 11:39:57.6050||0HM287LPIUNQG:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 55.3929ms 401 text/plain; charset=utf-8
+2020-08-24 11:45:54.3019||0HM287LPIUNQH:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login  
+2020-08-24 11:45:54.3087||0HM287LPIUNQH:00000001|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:45:54.3140|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP OPTIONS /api/auth/login responded 204 in 6.1351 ms
+2020-08-24 11:45:54.3229||0HM287LPIUNQH:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 21.1016ms 204 
+2020-08-24 11:45:54.3276||0HM287LPIUNQH:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 46
+2020-08-24 11:45:54.3360||0HM287LPIUNQH:00000002|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:45:54.3376||0HM287LPIUNQH:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:45:54.3399||0HM287LPIUNQH:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 11:45:54.3453||0HM287LPIUNQH:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 11:45:54.3483||0HM287LPIUNQH:00000002|Microsoft.EntityFrameworkCore.Infrastructure|INF|Entity Framework Core 3.1.7 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2020-08-24 11:45:54.3705||0HM287LPIUNQH:00000002|Microsoft.EntityFrameworkCore.Database.Command|INF|Executed DbCommand (7ms) [Parameters=[@__username_0='ravikanth' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[City], [u].[Country], [u].[Created], [u].[DateOfBirth], [u].[Email], [u].[Gender], [u].[LastActivity], [u].[PasswordHash], [u].[PasswordSalt], [u].[State], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0
+2020-08-24 11:45:54.3774||0HM287LPIUNQH:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 30.2891ms.
+2020-08-24 11:45:54.3804||0HM287LPIUNQH:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INF|Executing ObjectResult, writing value of type 'System.String'.
+2020-08-24 11:45:54.3834||0HM287LPIUNQH:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 40.4698ms
+2020-08-24 11:45:54.3874||0HM287LPIUNQH:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:45:54.3896|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP POST /api/auth/login responded 401 in 59.0819 ms
+2020-08-24 11:45:54.3927||0HM287LPIUNQH:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 65.4654ms 401 text/plain; charset=utf-8
+2020-08-24 11:47:06.7132||0HM287LPIUNQH:00000003|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login  
+2020-08-24 11:47:06.7166||0HM287LPIUNQH:00000003|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:47:06.7194|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP OPTIONS /api/auth/login responded 204 in 3.2484 ms
+2020-08-24 11:47:06.7227||0HM287LPIUNQH:00000003|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 9.5395ms 204 
+2020-08-24 11:47:06.7276||0HM287LPIUNQH:00000004|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 46
+2020-08-24 11:47:06.7300||0HM287LPIUNQH:00000004|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 11:47:06.7325||0HM287LPIUNQH:00000004|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:47:06.7357||0HM287LPIUNQH:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 11:47:06.7425||0HM287LPIUNQH:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 11:47:06.7459||0HM287LPIUNQH:00000004|Microsoft.EntityFrameworkCore.Infrastructure|INF|Entity Framework Core 3.1.7 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2020-08-24 11:47:06.7574||0HM287LPIUNQH:00000004|Microsoft.EntityFrameworkCore.Database.Command|INF|Executed DbCommand (6ms) [Parameters=[@__username_0='ravikanth' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[City], [u].[Country], [u].[Created], [u].[DateOfBirth], [u].[Email], [u].[Gender], [u].[LastActivity], [u].[PasswordHash], [u].[PasswordSalt], [u].[State], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0
+2020-08-24 11:47:06.7632||0HM287LPIUNQH:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 18.3077ms.
+2020-08-24 11:47:06.7664||0HM287LPIUNQH:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INF|Executing ObjectResult, writing value of type 'System.String'.
+2020-08-24 11:47:06.7723||0HM287LPIUNQH:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 33.3388ms
+2020-08-24 11:47:06.7785||0HM287LPIUNQH:00000004|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 11:47:06.7829|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP POST /api/auth/login responded 401 in 53.2640 ms
+2020-08-24 11:47:06.7870||0HM287LPIUNQH:00000004|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 59.838ms 401 text/plain; charset=utf-8
+2020-08-24 14:09:57.9497||||INF|Application Starting up
+2020-08-24 14:09:58.3547|||Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|INF|User profile is available. Using 'C:\Users\Ravikanth\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-08-24 14:09:58.7096|||Microsoft.Hosting.Lifetime|INF|Now listening on: http://localhost:5000
+2020-08-24 14:09:58.7148|||Microsoft.Hosting.Lifetime|INF|Application started. Press Ctrl+C to shut down.
+2020-08-24 14:09:58.7163|||Microsoft.Hosting.Lifetime|INF|Hosting environment: Development
+2020-08-24 14:09:58.7183|||Microsoft.Hosting.Lifetime|INF|Content root path: E:\VSLAcademy\CodeBase\VslAcademy.API
+2020-08-24 14:16:41.9283|||Microsoft.Hosting.Lifetime|INF|Application is shutting down...
+2020-08-24 14:17:25.4206||||INF|Application Starting up
+2020-08-24 14:17:26.1186|||Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|INF|User profile is available. Using 'C:\Users\Ravikanth\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-08-24 14:17:26.6637|||Microsoft.Hosting.Lifetime|INF|Now listening on: http://localhost:5000
+2020-08-24 14:17:26.7014|||Microsoft.Hosting.Lifetime|INF|Application started. Press Ctrl+C to shut down.
+2020-08-24 14:17:26.7539|||Microsoft.Hosting.Lifetime|INF|Hosting environment: Production
+2020-08-24 14:17:26.8536|||Microsoft.Hosting.Lifetime|INF|Content root path: E:\VSLAcademy\CodeBase\VslAcademy.API
+2020-08-24 14:18:00.1135||0HM28B847CCBH:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login/ application/json 65
+2020-08-24 14:18:00.3647||0HM28B847CCBH:00000001|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:18:00.5385||0HM28B847CCBH:00000001|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 14:18:01.7177||0HM28B847CCBH:00000001|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 14:18:01.8289||0HM28B847CCBH:00000001|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 1208.3909ms
+2020-08-24 14:18:01.8546||0HM28B847CCBH:00000001|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:18:01.8871|||Serilog.AspNetCore.RequestLoggingMiddleware|ERR|HTTP POST /api/auth/login/ responded 500 in 1615.3015 ms
+System.Exception: Application error occured
+   at VslAcademy.API.Controllers.AuthController.login(UserForLoginDTO userForLoginDTO) in E:\VSLAcademy\CodeBase\VslAcademy.API\Controllers\AuthController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at StackExchange.Profiling.MiniProfilerMiddleware.Invoke(HttpContext context) in C:\projects\dotnet\src\MiniProfiler.AspNetCore\MiniProfilerMiddleware.cs:line 105
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2020-08-24 14:18:02.1469||0HM28B847CCBH:00000001|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|ERR|An unhandled exception has occurred while executing the request.
+System.Exception: Application error occured
+   at VslAcademy.API.Controllers.AuthController.login(UserForLoginDTO userForLoginDTO) in E:\VSLAcademy\CodeBase\VslAcademy.API\Controllers\AuthController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at StackExchange.Profiling.MiniProfilerMiddleware.Invoke(HttpContext context) in C:\projects\dotnet\src\MiniProfiler.AspNetCore\MiniProfilerMiddleware.cs:line 105
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2020-08-24 14:18:02.6642||0HM28B847CCBH:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 2557.2316ms 500 
+2020-08-24 14:18:48.9830|||Microsoft.Hosting.Lifetime|INF|Application is shutting down...
+2020-08-24 14:21:35.5448||||INF|Application Starting up
+2020-08-24 14:21:36.0306|||Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|INF|User profile is available. Using 'C:\Users\Ravikanth\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-08-24 14:21:36.5449|||Microsoft.Hosting.Lifetime|INF|Now listening on: http://localhost:5000
+2020-08-24 14:21:36.6022|||Microsoft.Hosting.Lifetime|INF|Application started. Press Ctrl+C to shut down.
+2020-08-24 14:21:36.6801|||Microsoft.Hosting.Lifetime|INF|Hosting environment: Production
+2020-08-24 14:21:36.6841|||Microsoft.Hosting.Lifetime|INF|Content root path: E:\VSLAcademy\CodeBase\VslAcademy.API
+2020-08-24 14:21:41.8527||0HM28BA6B26E3:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login/ application/json 65
+2020-08-24 14:21:41.9823||0HM28BA6B26E3:00000001|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:21:42.2808||0HM28BA6B26E3:00000001|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 14:21:42.9588||0HM28BA6B26E3:00000001|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 14:21:42.9976||0HM28BA6B26E3:00000001|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 697.6558ms
+2020-08-24 14:21:43.0013||0HM28BA6B26E3:00000001|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:21:43.0095|||Serilog.AspNetCore.RequestLoggingMiddleware|ERR|HTTP POST /api/auth/login/ responded 500 in 1094.2645 ms
+System.Exception: Application error occured
+   at VslAcademy.API.Controllers.AuthController.login(UserForLoginDTO userForLoginDTO) in E:\VSLAcademy\CodeBase\VslAcademy.API\Controllers\AuthController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at StackExchange.Profiling.MiniProfilerMiddleware.Invoke(HttpContext context) in C:\projects\dotnet\src\MiniProfiler.AspNetCore\MiniProfilerMiddleware.cs:line 105
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2020-08-24 14:21:43.1832||0HM28BA6B26E3:00000001|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|ERR|An unhandled exception has occurred while executing the request.
+System.Exception: Application error occured
+   at VslAcademy.API.Controllers.AuthController.login(UserForLoginDTO userForLoginDTO) in E:\VSLAcademy\CodeBase\VslAcademy.API\Controllers\AuthController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at StackExchange.Profiling.MiniProfilerMiddleware.Invoke(HttpContext context) in C:\projects\dotnet\src\MiniProfiler.AspNetCore\MiniProfilerMiddleware.cs:line 105
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2020-08-24 14:21:43.2820||0HM28BA6B26E3:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 1436.1439ms 500 
+2020-08-24 14:24:38.5354|||Microsoft.Hosting.Lifetime|INF|Application is shutting down...
+2020-08-24 14:24:48.1993||||INF|Application Starting up
+2020-08-24 14:24:49.1786|||Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|INF|User profile is available. Using 'C:\Users\Ravikanth\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-08-24 14:24:49.6121|||Microsoft.Hosting.Lifetime|INF|Now listening on: http://localhost:5000
+2020-08-24 14:24:49.6191|||Microsoft.Hosting.Lifetime|INF|Application started. Press Ctrl+C to shut down.
+2020-08-24 14:24:49.6281|||Microsoft.Hosting.Lifetime|INF|Hosting environment: Production
+2020-08-24 14:24:49.6335|||Microsoft.Hosting.Lifetime|INF|Content root path: E:\VSLAcademy\CodeBase\VslAcademy.API
+2020-08-24 14:24:55.1652||0HM28BBVUJPIB:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login/ application/json 65
+2020-08-24 14:24:55.3411||0HM28BBVUJPIB:00000001|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:24:55.6152||0HM28BBVUJPIB:00000001|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 14:24:56.6617||0HM28BBVUJPIB:00000001|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 14:24:56.7186||0HM28BBVUJPIB:00000001|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 1050.4868ms
+2020-08-24 14:24:56.7650||0HM28BBVUJPIB:00000001|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:24:56.8178|||Serilog.AspNetCore.RequestLoggingMiddleware|ERR|HTTP POST /api/auth/login/ responded 500 in 1542.1430 ms
+System.Exception: Application error occured
+   at VslAcademy.API.Controllers.AuthController.login(UserForLoginDTO userForLoginDTO) in E:\VSLAcademy\CodeBase\VslAcademy.API\Controllers\AuthController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at StackExchange.Profiling.MiniProfilerMiddleware.Invoke(HttpContext context) in C:\projects\dotnet\src\MiniProfiler.AspNetCore\MiniProfilerMiddleware.cs:line 105
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2020-08-24 14:24:57.1385||0HM28BBVUJPIB:00000001|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|ERR|An unhandled exception has occurred while executing the request.
+System.Exception: Application error occured
+   at VslAcademy.API.Controllers.AuthController.login(UserForLoginDTO userForLoginDTO) in E:\VSLAcademy\CodeBase\VslAcademy.API\Controllers\AuthController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at StackExchange.Profiling.MiniProfilerMiddleware.Invoke(HttpContext context) in C:\projects\dotnet\src\MiniProfiler.AspNetCore\MiniProfilerMiddleware.cs:line 105
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2020-08-24 14:24:57.3035||0HM28BBVUJPIB:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 2147.7806ms 500 
+2020-08-24 14:26:35.0818|||Microsoft.Hosting.Lifetime|INF|Application is shutting down...
+2020-08-24 14:26:46.0444||||INF|Application Starting up
+2020-08-24 14:26:46.5647|||Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|INF|User profile is available. Using 'C:\Users\Ravikanth\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-08-24 14:26:47.1491|||Microsoft.Hosting.Lifetime|INF|Now listening on: http://localhost:5000
+2020-08-24 14:26:47.1520|||Microsoft.Hosting.Lifetime|INF|Application started. Press Ctrl+C to shut down.
+2020-08-24 14:26:47.1641|||Microsoft.Hosting.Lifetime|INF|Hosting environment: Production
+2020-08-24 14:26:47.1674|||Microsoft.Hosting.Lifetime|INF|Content root path: E:\VSLAcademy\CodeBase\VslAcademy.API
+2020-08-24 14:26:51.3456||0HM28BD2I8VDL:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login/ application/json 65
+2020-08-24 14:26:51.5276||0HM28BD2I8VDL:00000001|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:26:51.8008||0HM28BD2I8VDL:00000001|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 14:26:53.7011||0HM28BD2I8VDL:00000001|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 14:26:53.8298||0HM28BD2I8VDL:00000001|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 1992.7879ms
+2020-08-24 14:26:53.8653||0HM28BD2I8VDL:00000001|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:26:54.0311|||Serilog.AspNetCore.RequestLoggingMiddleware|ERR|HTTP POST /api/auth/login/ responded 500 in 2511.1336 ms
+System.Exception: Application error occured
+   at VslAcademy.API.Controllers.AuthController.login(UserForLoginDTO userForLoginDTO) in E:\VSLAcademy\CodeBase\VslAcademy.API\Controllers\AuthController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at StackExchange.Profiling.MiniProfilerMiddleware.Invoke(HttpContext context) in C:\projects\dotnet\src\MiniProfiler.AspNetCore\MiniProfilerMiddleware.cs:line 105
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2020-08-24 14:26:55.3149||0HM28BD2I8VDL:00000001|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|ERR|An unhandled exception has occurred while executing the request.
+System.Exception: Application error occured
+   at VslAcademy.API.Controllers.AuthController.login(UserForLoginDTO userForLoginDTO) in E:\VSLAcademy\CodeBase\VslAcademy.API\Controllers\AuthController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at StackExchange.Profiling.MiniProfilerMiddleware.Invoke(HttpContext context) in C:\projects\dotnet\src\MiniProfiler.AspNetCore\MiniProfilerMiddleware.cs:line 105
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2020-08-24 14:26:55.9349||0HM28BD2I8VDL:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 4617.8508ms 500 
+2020-08-24 14:27:05.0782|||Microsoft.Hosting.Lifetime|INF|Application is shutting down...
+2020-08-24 14:27:10.8291||||INF|Application Starting up
+2020-08-24 14:27:11.1102|||Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|INF|User profile is available. Using 'C:\Users\Ravikanth\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-08-24 14:27:11.3767|||Microsoft.Hosting.Lifetime|INF|Now listening on: http://localhost:5000
+2020-08-24 14:27:11.3785|||Microsoft.Hosting.Lifetime|INF|Application started. Press Ctrl+C to shut down.
+2020-08-24 14:27:11.3822|||Microsoft.Hosting.Lifetime|INF|Hosting environment: Production
+2020-08-24 14:27:11.3845|||Microsoft.Hosting.Lifetime|INF|Content root path: E:\VSLAcademy\CodeBase\VslAcademy.API
+2020-08-24 14:27:32.7742|||Microsoft.Hosting.Lifetime|INF|Application is shutting down...
+2020-08-24 14:27:39.2907||||INF|Application Starting up
+2020-08-24 14:27:39.5956|||Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|INF|User profile is available. Using 'C:\Users\Ravikanth\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-08-24 14:27:39.8494|||Microsoft.Hosting.Lifetime|INF|Now listening on: http://localhost:5000
+2020-08-24 14:27:39.8598|||Microsoft.Hosting.Lifetime|INF|Application started. Press Ctrl+C to shut down.
+2020-08-24 14:27:39.8618|||Microsoft.Hosting.Lifetime|INF|Hosting environment: Production
+2020-08-24 14:27:39.8640|||Microsoft.Hosting.Lifetime|INF|Content root path: E:\VSLAcademy\CodeBase\VslAcademy.API
+2020-08-24 14:27:54.1516||0HM28BDL9NK4I:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login/ application/json 65
+2020-08-24 14:27:54.3167||0HM28BDL9NK4I:00000001|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:27:54.4211||0HM28BDL9NK4I:00000001|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 14:27:55.0153||0HM28BDL9NK4I:00000001|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 14:27:55.0526||0HM28BDL9NK4I:00000001|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 611.8937ms
+2020-08-24 14:27:55.0675||0HM28BDL9NK4I:00000001|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:27:55.0834|||Serilog.AspNetCore.RequestLoggingMiddleware|ERR|HTTP POST /api/auth/login/ responded 500 in 819.0315 ms
+System.Exception: Application error occured
+   at VslAcademy.API.Controllers.AuthController.login(UserForLoginDTO userForLoginDTO) in E:\VSLAcademy\CodeBase\VslAcademy.API\Controllers\AuthController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at StackExchange.Profiling.MiniProfilerMiddleware.Invoke(HttpContext context) in C:\projects\dotnet\src\MiniProfiler.AspNetCore\MiniProfilerMiddleware.cs:line 105
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2020-08-24 14:27:55.1994||0HM28BDL9NK4I:00000001|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|ERR|An unhandled exception has occurred while executing the request.
+System.Exception: Application error occured
+   at VslAcademy.API.Controllers.AuthController.login(UserForLoginDTO userForLoginDTO) in E:\VSLAcademy\CodeBase\VslAcademy.API\Controllers\AuthController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at StackExchange.Profiling.MiniProfilerMiddleware.Invoke(HttpContext context) in C:\projects\dotnet\src\MiniProfiler.AspNetCore\MiniProfilerMiddleware.cs:line 105
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2020-08-24 14:27:55.2506||||INF|In response extension method
+2020-08-24 14:27:55.2639||0HM28BDL9NK4I:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 1124.3498ms 500 
+2020-08-24 14:28:30.4144||0HM28BDL9NK4J:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login  
+2020-08-24 14:28:30.4230||0HM28BDL9NK4J:00000001|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 14:28:30.4476|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP OPTIONS /api/auth/login responded 204 in 29.2929 ms
+2020-08-24 14:28:30.4523||0HM28BDL9NK4J:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 38.0055ms 204 
+2020-08-24 14:28:30.4937||0HM28BDL9NK4J:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 47
+2020-08-24 14:28:30.5135||0HM28BDL9NK4J:00000002|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 14:28:30.5154||0HM28BDL9NK4J:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:28:30.5183||0HM28BDL9NK4J:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 14:28:30.5496||0HM28BDL9NK4J:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 14:28:30.5541||0HM28BDL9NK4J:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 7.7211ms
+2020-08-24 14:28:30.5981||0HM28BDL9NK4J:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:28:30.6008|||Serilog.AspNetCore.RequestLoggingMiddleware|ERR|HTTP POST /api/auth/login responded 500 in 88.1076 ms
+System.Exception: Application error occured
+   at VslAcademy.API.Controllers.AuthController.login(UserForLoginDTO userForLoginDTO) in E:\VSLAcademy\CodeBase\VslAcademy.API\Controllers\AuthController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at StackExchange.Profiling.MiniProfilerMiddleware.Invoke(HttpContext context) in C:\projects\dotnet\src\MiniProfiler.AspNetCore\MiniProfilerMiddleware.cs:line 105
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2020-08-24 14:28:30.6675||0HM28BDL9NK4J:00000002|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|ERR|An unhandled exception has occurred while executing the request.
+System.Exception: Application error occured
+   at VslAcademy.API.Controllers.AuthController.login(UserForLoginDTO userForLoginDTO) in E:\VSLAcademy\CodeBase\VslAcademy.API\Controllers\AuthController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at StackExchange.Profiling.MiniProfilerMiddleware.Invoke(HttpContext context) in C:\projects\dotnet\src\MiniProfiler.AspNetCore\MiniProfilerMiddleware.cs:line 105
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2020-08-24 14:28:30.7302||||INF|In response extension method
+2020-08-24 14:28:30.7327||0HM28BDL9NK4J:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 239.4982ms 500 
+2020-08-24 14:45:38.9399||0HM28BDL9NK4K:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login  
+2020-08-24 14:45:38.9480||0HM28BDL9NK4K:00000001|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 14:45:38.9512|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP OPTIONS /api/auth/login responded 204 in 5.3344 ms
+2020-08-24 14:45:38.9542||0HM28BDL9NK4K:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 15.7446ms 204 
+2020-08-24 14:45:38.9590||0HM28BDL9NK4K:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 42
+2020-08-24 14:45:38.9620||0HM28BDL9NK4K:00000002|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 14:45:38.9635||0HM28BDL9NK4K:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:45:38.9661||0HM28BDL9NK4K:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 14:45:38.9767||0HM28BDL9NK4K:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 14:45:38.9799||0HM28BDL9NK4K:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 9.6145ms
+2020-08-24 14:45:38.9822||0HM28BDL9NK4K:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:45:38.9845|||Serilog.AspNetCore.RequestLoggingMiddleware|ERR|HTTP POST /api/auth/login responded 500 in 22.9914 ms
+System.Exception: Application error occured
+   at VslAcademy.API.Controllers.AuthController.login(UserForLoginDTO userForLoginDTO) in E:\VSLAcademy\CodeBase\VslAcademy.API\Controllers\AuthController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at StackExchange.Profiling.MiniProfilerMiddleware.Invoke(HttpContext context) in C:\projects\dotnet\src\MiniProfiler.AspNetCore\MiniProfilerMiddleware.cs:line 105
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2020-08-24 14:45:39.0023||0HM28BDL9NK4K:00000002|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|ERR|An unhandled exception has occurred while executing the request.
+System.Exception: Application error occured
+   at VslAcademy.API.Controllers.AuthController.login(UserForLoginDTO userForLoginDTO) in E:\VSLAcademy\CodeBase\VslAcademy.API\Controllers\AuthController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at StackExchange.Profiling.MiniProfilerMiddleware.Invoke(HttpContext context) in C:\projects\dotnet\src\MiniProfiler.AspNetCore\MiniProfilerMiddleware.cs:line 105
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2020-08-24 14:45:39.0249||||INF|In response extension method
+2020-08-24 14:45:39.0269||0HM28BDL9NK4K:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 68.005ms 500 
+2020-08-24 14:47:00.6649||0HM28BDL9NK4K:00000003|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login  
+2020-08-24 14:47:00.6781||0HM28BDL9NK4K:00000003|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 14:47:00.7114|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP OPTIONS /api/auth/login responded 204 in 35.9452 ms
+2020-08-24 14:47:00.7160||0HM28BDL9NK4K:00000003|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 52.0556ms 204 
+2020-08-24 14:47:00.7250||0HM28BDL9NK4K:00000004|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 43
+2020-08-24 14:47:00.7278||0HM28BDL9NK4K:00000004|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 14:47:00.7305||0HM28BDL9NK4K:00000004|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:47:00.7363||0HM28BDL9NK4K:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 14:47:00.7536||0HM28BDL9NK4K:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 14:47:00.7589||0HM28BDL9NK4K:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 8.2131ms
+2020-08-24 14:47:00.7622||0HM28BDL9NK4K:00000004|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:47:00.7643|||Serilog.AspNetCore.RequestLoggingMiddleware|ERR|HTTP POST /api/auth/login responded 500 in 37.1406 ms
+System.Exception: Application error occured
+   at VslAcademy.API.Controllers.AuthController.login(UserForLoginDTO userForLoginDTO) in E:\VSLAcademy\CodeBase\VslAcademy.API\Controllers\AuthController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at StackExchange.Profiling.MiniProfilerMiddleware.Invoke(HttpContext context) in C:\projects\dotnet\src\MiniProfiler.AspNetCore\MiniProfilerMiddleware.cs:line 105
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2020-08-24 14:47:00.7840||0HM28BDL9NK4K:00000004|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|ERR|An unhandled exception has occurred while executing the request.
+System.Exception: Application error occured
+   at VslAcademy.API.Controllers.AuthController.login(UserForLoginDTO userForLoginDTO) in E:\VSLAcademy\CodeBase\VslAcademy.API\Controllers\AuthController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at StackExchange.Profiling.MiniProfilerMiddleware.Invoke(HttpContext context) in C:\projects\dotnet\src\MiniProfiler.AspNetCore\MiniProfilerMiddleware.cs:line 105
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2020-08-24 14:47:00.8077||||INF|In response extension method
+2020-08-24 14:47:00.8106||0HM28BDL9NK4K:00000004|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 85.9534ms 500 
+2020-08-24 14:47:50.1334|||Microsoft.Hosting.Lifetime|INF|Application is shutting down...
+2020-08-24 14:47:57.9479||||INF|Application Starting up
+2020-08-24 14:47:58.3738|||Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|INF|User profile is available. Using 'C:\Users\Ravikanth\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-08-24 14:47:58.7808|||Microsoft.Hosting.Lifetime|INF|Now listening on: http://localhost:5000
+2020-08-24 14:47:58.8686|||Microsoft.Hosting.Lifetime|INF|Application started. Press Ctrl+C to shut down.
+2020-08-24 14:47:58.8703|||Microsoft.Hosting.Lifetime|INF|Hosting environment: Production
+2020-08-24 14:47:58.8974|||Microsoft.Hosting.Lifetime|INF|Content root path: E:\VSLAcademy\CodeBase\VslAcademy.API
+2020-08-24 14:48:01.8369||0HM28BOT74JE5:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login  
+2020-08-24 14:48:01.9775||0HM28BOT74JE5:00000001|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 14:48:02.0025|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP OPTIONS /api/auth/login responded 204 in 95.1620 ms
+2020-08-24 14:48:02.0381||0HM28BOT74JE5:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 206.7683ms 204 
+2020-08-24 14:48:02.0779||0HM28BOT74JE5:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 51
+2020-08-24 14:48:02.1233||0HM28BOT74JE5:00000002|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 14:48:02.1439||0HM28BOT74JE5:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:48:02.2608||0HM28BOT74JE5:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 14:48:02.8613||0HM28BOT74JE5:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 14:48:03.5571||0HM28BOT74JE5:00000002|Microsoft.EntityFrameworkCore.Model.Validation|WRN|Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.
+2020-08-24 14:48:03.6750||0HM28BOT74JE5:00000002|Microsoft.EntityFrameworkCore.Infrastructure|INF|Entity Framework Core 3.1.7 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2020-08-24 14:48:04.3829||0HM28BOT74JE5:00000002|Microsoft.EntityFrameworkCore.Database.Command|INF|Executed DbCommand (107ms) [Parameters=[@__username_0='lravikanth' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[City], [u].[Country], [u].[Created], [u].[DateOfBirth], [u].[Email], [u].[Gender], [u].[LastActivity], [u].[PasswordHash], [u].[PasswordSalt], [u].[State], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0
+2020-08-24 14:48:04.5475||0HM28BOT74JE5:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 1665.44ms.
+2020-08-24 14:48:04.5854||0HM28BOT74JE5:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INF|Executing ObjectResult, writing value of type 'System.String'.
+2020-08-24 14:48:04.6167||0HM28BOT74JE5:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 2332.397ms
+2020-08-24 14:48:04.6238||0HM28BOT74JE5:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:48:04.6778|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP POST /api/auth/login responded 401 in 2558.1535 ms
+2020-08-24 14:48:04.7049||0HM28BOT74JE5:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 2618.2363ms 401 text/plain; charset=utf-8
+2020-08-24 14:50:59.6416||0HM28BOT74JE6:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login  
+2020-08-24 14:50:59.6483||0HM28BOT74JE6:00000001|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 14:50:59.6513|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP OPTIONS /api/auth/login responded 204 in 5.7402 ms
+2020-08-24 14:50:59.6553||0HM28BOT74JE6:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 13.9798ms 204 
+2020-08-24 14:50:59.6634||0HM28BOT74JE6:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 47
+2020-08-24 14:50:59.6672||0HM28BOT74JE6:00000002|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 14:50:59.6688||0HM28BOT74JE6:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:50:59.6743||0HM28BOT74JE6:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 14:50:59.7022||0HM28BOT74JE6:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 14:50:59.8434||0HM28BOT74JE6:00000002|Microsoft.EntityFrameworkCore.Infrastructure|INF|Entity Framework Core 3.1.7 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2020-08-24 14:50:59.8812||0HM28BOT74JE6:00000002|Microsoft.EntityFrameworkCore.Database.Command|INF|Executed DbCommand (10ms) [Parameters=[@__username_0='lravikanth' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[City], [u].[Country], [u].[Created], [u].[DateOfBirth], [u].[Email], [u].[Gender], [u].[LastActivity], [u].[PasswordHash], [u].[PasswordSalt], [u].[State], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0
+2020-08-24 14:50:59.9050||0HM28BOT74JE6:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 162.8505ms.
+2020-08-24 14:50:59.9576||0HM28BOT74JE6:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INF|Executing ObjectResult, writing value of type 'System.String'.
+2020-08-24 14:50:59.9611||0HM28BOT74JE6:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 262.3847ms
+2020-08-24 14:50:59.9638||0HM28BOT74JE6:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:50:59.9661|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP POST /api/auth/login responded 401 in 299.1185 ms
+2020-08-24 14:50:59.9690||0HM28BOT74JE6:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 306.0886ms 401 text/plain; charset=utf-8
+2020-08-24 14:51:32.0800||0HM28BOT74JE6:00000003|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login  
+2020-08-24 14:51:32.0921||0HM28BOT74JE6:00000003|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 14:51:32.1015|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP OPTIONS /api/auth/login responded 204 in 11.4087 ms
+2020-08-24 14:51:32.1257||0HM28BOT74JE6:00000003|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 45.9409ms 204 
+2020-08-24 14:51:32.1444||0HM28BOT74JE6:00000004|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 44
+2020-08-24 14:51:32.1474||0HM28BOT74JE6:00000004|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 14:51:32.1503||0HM28BOT74JE6:00000004|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:51:32.1534||0HM28BOT74JE6:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 14:51:32.1779||0HM28BOT74JE6:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 14:51:32.2153||0HM28BOT74JE6:00000004|Microsoft.EntityFrameworkCore.Infrastructure|INF|Entity Framework Core 3.1.7 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2020-08-24 14:51:32.2699||0HM28BOT74JE6:00000004|Microsoft.EntityFrameworkCore.Database.Command|INF|Executed DbCommand (11ms) [Parameters=[@__username_0='sdfsadf' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[City], [u].[Country], [u].[Created], [u].[DateOfBirth], [u].[Email], [u].[Gender], [u].[LastActivity], [u].[PasswordHash], [u].[PasswordSalt], [u].[State], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0
+2020-08-24 14:51:32.3332||0HM28BOT74JE6:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 136.415ms.
+2020-08-24 14:51:32.3617||0HM28BOT74JE6:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INF|Executing ObjectResult, writing value of type 'System.String'.
+2020-08-24 14:51:32.3641||0HM28BOT74JE6:00000004|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 192.5796ms
+2020-08-24 14:51:32.3684||0HM28BOT74JE6:00000004|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:51:32.3705|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP POST /api/auth/login responded 401 in 224.1688 ms
+2020-08-24 14:51:32.4312||0HM28BOT74JE6:00000004|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 259.9704ms 401 text/plain; charset=utf-8
+2020-08-24 14:52:07.6092||0HM28BOT74JE6:00000005|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login  
+2020-08-24 14:52:07.6147||0HM28BOT74JE6:00000005|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 14:52:07.6459|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP OPTIONS /api/auth/login responded 204 in 32.3022 ms
+2020-08-24 14:52:07.6508||0HM28BOT74JE6:00000005|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 41.5449ms 204 
+2020-08-24 14:52:07.6948||0HM28BOT74JE6:00000006|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 47
+2020-08-24 14:52:07.6983||0HM28BOT74JE6:00000006|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 14:52:07.7000||0HM28BOT74JE6:00000006|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:52:07.7024||0HM28BOT74JE6:00000006|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 14:52:07.7471||0HM28BOT74JE6:00000006|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 14:52:07.7527||0HM28BOT74JE6:00000006|Microsoft.EntityFrameworkCore.Infrastructure|INF|Entity Framework Core 3.1.7 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2020-08-24 14:52:07.7913||0HM28BOT74JE6:00000006|Microsoft.EntityFrameworkCore.Database.Command|INF|Executed DbCommand (4ms) [Parameters=[@__username_0='lravikanth' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[City], [u].[Country], [u].[Created], [u].[DateOfBirth], [u].[Email], [u].[Gender], [u].[LastActivity], [u].[PasswordHash], [u].[PasswordSalt], [u].[State], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0
+2020-08-24 14:52:07.8196||0HM28BOT74JE6:00000006|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 70.1304ms.
+2020-08-24 14:52:07.8574||0HM28BOT74JE6:00000006|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INF|Executing ObjectResult, writing value of type 'System.String'.
+2020-08-24 14:52:07.8764||0HM28BOT74JE6:00000006|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 134.1485ms
+2020-08-24 14:52:07.8797||0HM28BOT74JE6:00000006|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:52:07.8822|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP POST /api/auth/login responded 401 in 184.4746 ms
+2020-08-24 14:52:07.8856||0HM28BOT74JE6:00000006|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 190.9316ms 401 text/plain; charset=utf-8
+2020-08-24 14:57:28.7116||0HM28BOT74JE7:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login  
+2020-08-24 14:57:28.7143||0HM28BOT74JE7:00000001|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 14:57:28.7158|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP OPTIONS /api/auth/login responded 204 in 2.1886 ms
+2020-08-24 14:57:28.7184||0HM28BOT74JE7:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 6.9276ms 204 
+2020-08-24 14:57:28.7222||0HM28BOT74JE7:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 47
+2020-08-24 14:57:28.7237||0HM28BOT74JE7:00000002|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 14:57:28.7252||0HM28BOT74JE7:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:57:28.7276||0HM28BOT74JE7:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 14:57:28.7355||0HM28BOT74JE7:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 14:57:28.7400||0HM28BOT74JE7:00000002|Microsoft.EntityFrameworkCore.Infrastructure|INF|Entity Framework Core 3.1.7 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2020-08-24 14:57:28.7487||0HM28BOT74JE7:00000002|Microsoft.EntityFrameworkCore.Database.Command|INF|Executed DbCommand (4ms) [Parameters=[@__username_0='lravikanth' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[City], [u].[Country], [u].[Created], [u].[DateOfBirth], [u].[Email], [u].[Gender], [u].[LastActivity], [u].[PasswordHash], [u].[PasswordSalt], [u].[State], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0
+2020-08-24 14:57:28.8893||0HM28BOT74JE7:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 151.8979ms.
+2020-08-24 14:57:28.8926||0HM28BOT74JE7:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INF|Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-08-24 14:57:28.9491||0HM28BOT74JE7:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 215.9393ms
+2020-08-24 14:57:28.9543||0HM28BOT74JE7:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 14:57:28.9571|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP POST /api/auth/login responded 200 in 233.5280 ms
+2020-08-24 14:57:28.9622||0HM28BOT74JE7:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 239.9602ms 200 application/json; charset=utf-8
+2020-08-24 16:23:37.8385||0HM28BOT74JE8:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login  
+2020-08-24 16:23:37.8468||0HM28BOT74JE8:00000001|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 16:23:37.8501|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP OPTIONS /api/auth/login responded 204 in 6.5653 ms
+2020-08-24 16:23:37.8536||0HM28BOT74JE8:00000001|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 15.4981ms 204 
+2020-08-24 16:23:37.8574||0HM28BOT74JE8:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 47
+2020-08-24 16:23:37.8622||0HM28BOT74JE8:00000002|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INF|CORS policy execution successful.
+2020-08-24 16:23:37.8640||0HM28BOT74JE8:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executing endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 16:23:37.8671||0HM28BOT74JE8:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(VslAcademy.API.Dtos.Authorization.UserForLoginDTO) on controller VslAcademy.API.Controllers.AuthController (VslAcademy.API).
+2020-08-24 16:23:37.8735||0HM28BOT74JE8:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executing action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) - Validation state: "Valid"
+2020-08-24 16:23:37.8800||0HM28BOT74JE8:00000002|Microsoft.EntityFrameworkCore.Infrastructure|INF|Entity Framework Core 3.1.7 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2020-08-24 16:23:37.8974||0HM28BOT74JE8:00000002|Microsoft.EntityFrameworkCore.Database.Command|INF|Executed DbCommand (5ms) [Parameters=[@__username_0='lravikanth' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[City], [u].[Country], [u].[Created], [u].[DateOfBirth], [u].[Email], [u].[Gender], [u].[LastActivity], [u].[PasswordHash], [u].[PasswordSalt], [u].[State], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0
+2020-08-24 16:23:37.9064||0HM28BOT74JE8:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action method VslAcademy.API.Controllers.AuthController.login (VslAcademy.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 29.3186ms.
+2020-08-24 16:23:37.9122||0HM28BOT74JE8:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INF|Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-08-24 16:23:37.9148||0HM28BOT74JE8:00000002|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INF|Executed action VslAcademy.API.Controllers.AuthController.login (VslAcademy.API) in 44.3695ms
+2020-08-24 16:23:37.9187||0HM28BOT74JE8:00000002|Microsoft.AspNetCore.Routing.EndpointMiddleware|INF|Executed endpoint 'VslAcademy.API.Controllers.AuthController.login (VslAcademy.API)'
+2020-08-24 16:23:37.9207|||Serilog.AspNetCore.RequestLoggingMiddleware|INF|HTTP POST /api/auth/login responded 200 in 58.8896 ms
+2020-08-24 16:23:37.9240||0HM28BOT74JE8:00000002|Microsoft.AspNetCore.Hosting.Diagnostics|INF|Request finished in 66.784ms 200 application/json; charset=utf-8
+2020-08-24 17:11:06.6990|||Microsoft.Hosting.Lifetime|INF|Application is shutting down...

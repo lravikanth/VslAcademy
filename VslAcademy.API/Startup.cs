@@ -24,6 +24,8 @@ using Newtonsoft.Json;
 using Serilog;
 using VslAcademy.API.Data.Authorization;
 using AutoMapper;
+using VslAcademy.API.Helpers;
+using VslAcademy.API.Data.MathSkills;
 
 namespace VslAcademy.API
 {
@@ -51,7 +53,10 @@ namespace VslAcademy.API
       });
             services.AddAutoMapper(typeof(AuthRepository).Assembly); //Give any class in assembly for autoMapper to get assembly info.
             services.AddScoped<IAuthRepository,AuthRepository>();
+            services.AddScoped<ISkillsRepository,SkillsRepository>();
+            services.AddCors();
             services.AddControllers();
+            services.AddMemoryCache();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(option => {
@@ -61,7 +66,6 @@ namespace VslAcademy.API
                     IssuerSigningKey =new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
                     ValidateIssuer = false,
                     ValidateAudience = false
-
                 };
             });
 
@@ -74,12 +78,28 @@ namespace VslAcademy.API
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler(builder => {
+                    builder.Run(async context => {
+                        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                        var error = context.Features.Get<IExceptionHandlerFeature>();
+                        if (error != null)
+                        {
+                            context.Response.AddApplicationError(error.Error.Message);
+                            await context.Response.WriteAsync(error.Error.Message);
+                        }
+                    });
+                });
+            }
 
             //app.UseHttpsRedirection();
 
             app.UseRouting();
             app.UseSerilogRequestLogging(); 
              app.UseMiniProfiler();
+            app.UseCors(x => x.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin());
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

@@ -1,22 +1,28 @@
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using DatingApp.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using VslAcademy.API.Models.Authentication;
+
 
 namespace VslAcademy.API.Data.Authorization
 {
     public class AuthRepository : IAuthRepository
     {
         private readonly DataContext _context;
-        public AuthRepository(DataContext context)
+        private readonly IMemoryCache _memoryCache;
+
+        public AuthRepository(DataContext context, IMemoryCache memoryCache)
         {
             _context = context;
-
+            _memoryCache = memoryCache;
         }
         public async Task<User> Login(string username, string password)
         {
            var user=  await _context.Users.FirstOrDefaultAsync(x => x.UserName == username);
-
+ 
            if (user == null)
                 return null;
 
@@ -27,6 +33,22 @@ namespace VslAcademy.API.Data.Authorization
 
            return user;
         }
+
+        public async Task<UserRoles> GetAuthorizationInfo(int userId)
+                {
+                    var query =  _context.UserRoles.Include(role => role.Role)
+                                        .Include(p => p.Role.rolePermissions).ThenInclude(c =>c.permission).AsQueryable();
+                    
+                    return await query.Where(p => p.UserId == userId).SingleOrDefaultAsync();
+                }
+
+        // public async Task<IEnumerable<UserRoles>> GetAuthorizationInfo(int userId)
+        // {
+        //     var query =  _context.UserRoles.Include(role => role.Role)
+        //                         .Include(p => p.Role.rolePermissions).ThenInclude(c =>c.Permission).AsQueryable();
+            
+        //     return await query.Where(p => p.UserId == userId).ToListAsync();
+        // }
 
          private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordsalt)
         {

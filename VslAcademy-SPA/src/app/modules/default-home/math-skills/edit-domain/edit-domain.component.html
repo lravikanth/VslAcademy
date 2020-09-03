@@ -1,0 +1,19 @@
+<div class="modal-header bg-success text-white w-100 p-3" >
+  <h4 class="modal-title" id="modal-basic-title">Update Primary Domain</h4>
+</div>
+<div class="modal-body">
+  <form #editForm="ngForm" id="editForm">
+      <div class="form-group row d-flex justify-content-center align-items-center">
+          <label for="domainName" class="col-form-label col-sm-2 text-right">Domain Name:</label>
+          <div class="col-lg-8">
+              <input type="text" [(ngModel)]="domain.domain"  class="form-control" name="domainName"/>
+          </div>
+      </div>
+      
+      <div class="modal-footer">
+          <button class="btn btn-warning mr-2" (click)="modal.close('cancel')">Cancel</button>
+          <button  class="btn btn-success mr-2" (click)="update()" >Update</button>
+      </div>
+
+  </form>
+</div>

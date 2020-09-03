@@ -1,0 +1,6 @@
+2020-08-31 09:15:38.1061||||INF|Application Starting up
+2020-08-31 09:15:38.7326|||Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|INF|User profile is available. Using 'C:\Users\Ravikanth\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-08-31 09:15:38.9943|||Microsoft.Hosting.Lifetime|INF|Now listening on: http://localhost:5000
+2020-08-31 09:15:38.9960|||Microsoft.Hosting.Lifetime|INF|Application started. Press Ctrl+C to shut down.
+2020-08-31 09:15:38.9972|||Microsoft.Hosting.Lifetime|INF|Hosting environment: Development
+2020-08-31 09:15:38.9984|||Microsoft.Hosting.Lifetime|INF|Content root path: E:\VSLAcademy\CodeBase\VslAcademy.API

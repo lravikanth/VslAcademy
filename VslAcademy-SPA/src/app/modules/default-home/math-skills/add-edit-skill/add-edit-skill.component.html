@@ -1,0 +1,28 @@
+<div class="modal-header bg-success text-white w-100 p-3" >
+  <h4 class="modal-title" id="modal-basic-title">Add/Edit Skill</h4>
+</div>
+<div class="modal-body">
+  <form #editForm="ngForm" id="editForm">
+    <div class="form-group row d-flex justify-content-center align-items-center">  
+      Sub Domain:&nbsp; <label for="subDomainName" class="col-form-label font-weight-bold col-xs-4">{{subDomain}} </label>
+  </div>
+    <div class="form-group row d-flex justify-content-center align-items-center">
+          <label for="skillName" class="col-form-label  text-right col-xs-8">Skill Name:</label>
+          <div class="col-lg-8">
+              <input type="text" [(ngModel)]="skill.skillName"  class="form-control" name="skillName"/>
+          </div> 
+      </div>
+       <div class="btn-group btn-group-toggle padding-right:20px mr-2 mt-2"  *ngFor="let option of schoolGrades">
+        <label  [ngClass]="{
+          'btn-success': option.checked,
+          'btn-light': !option.checked}" ngbButtonLabel>
+          <input class="padding-right:20px;" type="checkbox" ngbButton [(ngModel)]="option.checked" [name]="option.id"> {{option.grade}} 
+        </label> 
+    </div>    
+      <div class="modal-footer  mt-2">
+          <button class="btn btn-warning mr-2" (click)="modal.close('cancel')">Cancel</button>
+          <button  class="btn btn-success mr-2 " (click)="save()" >Save</button>
+      </div>
+
+  </form>
+</div>

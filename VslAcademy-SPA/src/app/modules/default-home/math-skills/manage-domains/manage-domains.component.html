@@ -1,0 +1,38 @@
+
+<div class="float right-aligned">
+  <h5 class="card-label"> Add new domain: </h5>
+  
+  <button mat-raised-button color="primary" (click)="addDomain()"> Add Domain </button>
+  <br>
+</div>
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let parent of domainList">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       <p class="text-dark"> {{ parent.domain }}</p> 
+      </mat-panel-title>
+      <mat-panel-description  class="right-aligned">
+        <div class="actions" >
+        <span   (click)="$event.stopPropagation();editDomain(parent)"><i class="fas fa-edit btn btn-success fa-3x"></i></span>
+        <span (click)="$event.stopPropagation();delDomain(parent)" style="padding-left:20px;" ><i class="fas fa-trash-alt btn btn-danger fa-2x"></i></span>
+      </div>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+        <mat-expansion-panel  hideToggle  *ngFor="let details of parent.mathSubDomains">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ details.subDomain }}
+          </mat-panel-title>
+          <mat-panel-description  class="right-aligned">
+            <div class="actions" >
+            <span (click)="$event.stopPropagation();editSubDomain(parent.domain,details)"><i class="fas fa-edit sm btn btn-success fa-2x"></i></span>
+            <span (click)="$event.stopPropagation();delsubDomain(details)" style="padding-left:20px;" ><i class="fas fa-trash-alt btn btn-danger fa-2x"></i></span>
+           
+          </div>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+  </mat-expansion-panel>
+
+</mat-accordion>

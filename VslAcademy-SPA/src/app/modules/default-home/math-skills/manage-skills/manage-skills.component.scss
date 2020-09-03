@@ -1,0 +1,36 @@
+.my-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 600px !important;
+    }
+
+    .alt {
+        .mat-form-field {
+          width: auto !important;
+        }
+      
+        .mat-select-value {
+          max-width: 100%;
+          width: auto;
+        } 
+      }
+
+    .mat-form-field.mat-primary .mat-select-arrow {
+        color: blue;
+    }    
+    .mat-form-field.mat-primary .mat-select-underline {
+        color: blue;
+    } 
+    
+    mat-form-field {
+        width: 200px;
+      }
+
+      .mat-form-field-appearance-legacy .mat-form-field-underline {
+        background-color: blue;
+      }
+
+      mat-form-field-appearance-legacy span.mat-form-field-label-wrapper label {
+        font-size:14px !important;
+      }
