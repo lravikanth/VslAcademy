@@ -1,0 +1,116 @@
+<div class="modal-header bg-success text-white w-100 p-3" >
+  <h4 class="modal-title" id="modal-basic-title">Add/Edit Question</h4>
+</div>
+
+<div class="edit-container">
+  <form #editForm="ngForm" id="editForm" style="width: 100%;">  
+  <div class="row">
+    <div class="col">
+     <label for="disPlayText" class="col-form-label font-weight-bold col-xs-4">{{displayText}} </label>      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="topText" class="col-form-label  text-right col-xs-8">Top Text </label>
+    </div>
+    <div class="col-lg-8" style="text-align:center;">
+          <input type="text" [(ngModel)]="question.topText"  class="form-control" name="topText"/>
+      </div> 
+  </div>
+  <div class="row">
+    <div class="col"style="vertical-align:middle;" >
+      <div class="row"></div>
+      <label for="questionType" class="col-form-label  text-right col-xs-8">Question Type </label>
+    </div>
+    <div class="col-lg-8" style="text-align:left;">
+      <mat-form-field>
+        <mat-select  [(ngModel)]="question.questionType" name="questionType" required class="form-control">
+          <mat-option [value]="">--</mat-option>
+          <mat-option *ngFor="let item of questionType" [value]="item.Value">
+            {{item.Name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col" style="vertical-align:middle;" >
+      <div class="row"></div>
+        <label for="difficultyScore" class="col-form-label  text-right col-xs-8">Difficulty Score </label>
+    </div>
+    <div class="col-lg-8" style="text-align:left;">
+      <mat-form-field>
+        <mat-select  [(ngModel)]="question.difficultyScore" name="difficultyScore" required class="form-control">
+          <mat-option [value]="">--</mat-option>
+          <mat-option *ngFor="let item of scores" [value]="item">
+            {{item}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="ActualText" class="col-form-label  text-right col-xs-8">Actual Text </label>
+    </div>
+    <div  class="col-lg-8" style="text-align:center;">
+      <textarea matInput [(ngModel)]="question.actualText" class="form-control" rows="5" cols="50" name="actualText" style="background-color: white;" ></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="belowText" class="col-form-label  text-right col-xs-8">Top Text </label>
+    </div>
+    <div class="col-lg-8" style="text-align:center;">
+          <input type="text" [(ngModel)]="question.belowText"  class="form-control" name="belowText"/>
+      </div> 
+  </div>
+  <div class="row">
+  <div class="col">
+    <label for="lateX" class="col-form-label  text-right col-xs-8">LateX Text </label>
+  </div>
+  <div class="col-lg-8" style="text-align:center;">
+        <input type="text" [(ngModel)]="question.lateX"  class="form-control" name="lateX" value="freaking complex"/>
+  </div> 
+</div>
+<div class="row">
+  <div class="col">
+    <label for="lateX" class="col-form-label  text-left col-xs-8">Image Upload(only jpg/png files) </label>
+  </div>
+  <div class="col-lg-8" style="text-align:center;">
+    <input type="file" ng2FileSelect [uploader]="uploader" class="mt-3" />
+    <div class="progress mb-4">
+      <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+  </div>
+    <button type="button" class="btn btn-success btn-s"
+    (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+<span class="fa fa-upload"></span> Upload 
+</button>
+<div class="row">
+  <p>Answer Section</p>
+</div>
+<div class="row">
+  <div class="col">
+    <label for="answerTopText" class="col-form-label  text-right col-xs-8">Top Text </label>
+  </div>
+  <div class="col-lg-8" style="text-align:center;">
+        <input type="text" [(ngModel)]="question.answer.topText"  class="form-control" name="answerTopText" />
+  </div> 
+</div>
+<div class="row">
+  <div class="col">
+    <label for="answerType" class="col-form-label  text-right col-xs-8">Answer Type </label>
+  </div>
+  <div class="col-lg-8" style="text-align:center;">
+    <mat-radio-group formControlName="gender">
+      <mat-label>Gender:</mat-label>&nbsp;
+      <mat-radio-button color="primary" value="male">Male</mat-radio-button
+      >&nbsp;
+      <mat-radio-button color="primary" value="female">Female</mat-radio-button>
+    </mat-radio-group>       
+  </div> 
+</div>
+  </div> 
+</div>
+</form>
+</div>

@@ -1,0 +1,34 @@
+mat-select {
+    width: 100px !important;
+    min-width: 100%;
+}
+
+::ng-deep .mat-form-field-infix {
+    width: 100px !important;
+    width: fit-content !important;
+}
+
+::ng-deep mat-select .mat-select-value {
+    width: 100px;
+    min-width: 2ch;
+    max-width: 25ch;
+}
+::ng-deep mat-select .mat-select-placeholder {
+    width: 100px;
+    min-width: 10ch;
+}
+
+.mat-select-trigger { min-width: 100px; }
+
+
+.alt {
+    .mat-form-field {
+      width: 100px !important;
+    }
+  
+    .mat-select-value {
+      max-width: 100%;
+      width: 100px;
+    }  
+  }
+  

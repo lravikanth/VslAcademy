@@ -66,5 +66,15 @@ namespace VslAcademy.API.Data.MathSkills
             Where(q => q.MathDomainId == DomainId && q.GradeMapping.Any(g => g.GradeId == GradeId)).ToListAsync();
            
         }
+
+        public async Task<Question> GetQuestion(int questionId)
+        {
+           return await _context.Questions.Include(p => p.Answer).FirstOrDefaultAsync(obj => obj.Id == questionId);
+        }
+
+        public async Task<List<Question>> GetQuestions(int skillGradeMappingId)
+        {
+            return await _context.Questions.Include(p => p.Answer).Where(q => q.SkillGradeMappingId == skillGradeMappingId).ToListAsync();
+        }
     }
 }

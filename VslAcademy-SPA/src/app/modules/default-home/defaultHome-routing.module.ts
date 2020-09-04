@@ -1,3 +1,4 @@
+import { ManageQuestionsComponent } from './math-skills/manage-questions/manage-questions.component';
 import { MathDomainResolver } from '../../_resolvers/math-domain-resolvers';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -18,6 +19,7 @@ const moduleRoutes: Routes = [
         { path: 'dashboard', component: DashboardComponent},  
         { path: 'managedomains', component: ManageDomainsComponent, resolve: {domainData: MathDomainResolver}},  
         { path: 'manageskills', component: ManageSkillsComponent, resolve: {searchLkp: ManageSkillsResolver }},  
+        { path: 'managequestions', component: ManageQuestionsComponent, resolve: {searchLkp: ManageSkillsResolver }},  
       ], 
 
     },

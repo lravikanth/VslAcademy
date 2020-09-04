@@ -15,8 +15,10 @@ namespace VslAcademy.API.Data.MathSkills
         Task<MathDomain> GetDomain(int domainId);
         Task<MathSubDomain> GetSubDomain(int SubDomainId);
 
-         Task<MathSkill> GetSkill(int SkillId);
+        Task<MathSkill> GetSkill(int SkillId);
 
+        Task<Question> GetQuestion(int questionId);
+        Task<List<Question>> GetQuestions(int skillGradeMappingId);
          Task<List<SchoolGrade>> GetSchoolGrades();
 
          Task<List<MathSubDomain>> GetSubDomains(int DomainId, int GradeId);

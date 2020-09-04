@@ -49,4 +49,9 @@ updateSkill(userId: number, skillModel: any) {
 updateDomain(userId: number,domainId: number, strModel: string) {
   return this.http.put(this.baseUrl + userId + '/mathdomain/' + domainId,{strData: strModel});
 }
+
+getQuestions(userId: number,skillId: number, gradeId: number) {
+  return this.http.get(this.baseUrl + userId + '/questions/' + skillId + '/' + gradeId);
+}
+
 }

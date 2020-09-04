@@ -22,6 +22,8 @@ namespace DatingApp.Data
         public DbSet<MathDomain> MathDomains {get;set;} 
         public DbSet<MathSubDomain> MathSubDomains {get;set;}
         public DbSet<MathSkill> MathSkills {get;set;}
+        public DbSet<Question> Questions {get;set;}
+        public DbSet<Answer> Answers {get;set;}
         public DbSet<SchoolGrade> SchoolGrades {get;set;}
         public DbSet<SubDomainGradeMapping> SubDomainGradeMappings {get;set;}
          public DbSet<SkillGradeMapping> SkillGradeMappings {get;set;}

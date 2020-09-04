@@ -28,6 +28,10 @@ import { EditDomainComponent } from './math-skills/edit-domain/edit-domain.compo
 import { EditSubDomainComponent } from './math-skills/edit-SubDomain/edit-SubDomain.component';
 import { ManageSkillsResolver } from 'src/app/_resolvers/manage-skills-resolvers';
 import { AddEditSkillComponent } from './math-skills/add-edit-skill/add-edit-skill.component';
+import { ManageQuestionsComponent } from './math-skills/manage-questions/manage-questions.component';
+import { EditQuestionComponent } from './math-skills/edit-question/edit-question.component';
+import { FileUploadModule } from 'ng2-file-upload';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 @NgModule({
@@ -42,10 +46,10 @@ import { AddEditSkillComponent } from './math-skills/add-edit-skill/add-edit-ski
     HeaderMenuComponent,
     TopbarComponent,
     ManageDomainsComponent,
-    EditDomainComponent,
-    EditSubDomainComponent,
-    ManageSkillsComponent,
-    AddEditSkillComponent
+    EditDomainComponent, EditSubDomainComponent,
+    ManageSkillsComponent,AddEditSkillComponent,
+    ManageQuestionsComponent,
+    EditQuestionComponent
   ],
   imports: [
     CommonModule,
@@ -62,7 +66,9 @@ import { AddEditSkillComponent } from './math-skills/add-edit-skill/add-edit-ski
     NgbModalModule,
     ReactiveFormsModule,
     NgbModule,
-    MatSelectModule
+    MatSelectModule,
+    FileUploadModule,
+    MatRadioModule
   ],
   providers: [
     AlertifyService, 

@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="row" style="align-content: center;">
+    
+    <button mat-raised-button color="primary" (click)="showSearch()">
+      <span *ngIf="!isSearchOpen"><i class="fas fa-expand-arrows-alt fa-2x" style="color: #26b2ad;"></i> &nbsp; Show Search </span>
+      <span *ngIf="isSearchOpen"><i class="fas fa-compress-arrows-alt fa-lg" style="color: #26b2ad;"></i> &nbsp; Hide Search</span>
+      
+    </button>
+
+  </div>
+
+  <div class="row mt-3">
+    <div class="col" [@animationOption2]="isSearchOpen ? 'open': 'close'" [hidden]="!isSearchOpen">
+ <form #createForm="ngForm" [formGroup]="questionsForm" style="border:solid grey 1px;">
+  <div class="row mt-3 ml-3"  >
+    <div class="col" style="align-content: space-between;">
+      <mat-form-field>
+        <mat-select placeholder="Domain Area" [(ngModel)]="selectedDomain" name="domain" required  formControlName="domainSelect" (selectionChange)="domainChange(selectedDomain)">
+          <mat-option *ngFor="let domain of domains" [value]="domain.id">
+            {{domain.domain}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field>
+        <mat-select placeholder="Gade" [(ngModel)]="selectedGrade" name="grade" required formControlName="gradeSelect" (selectionChange)="gradeChange($event)">
+          <mat-option [value]="">--</mat-option>
+          <mat-option *ngFor="let grade of grades" [value]="grade.id">
+            {{grade.grade}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row ml-3">
+    <div class="col">
+      <mat-form-field>
+        <mat-select placeholder="Sub Domain" [(ngModel)]="selectedSubDomain" panelClass="my-panel" name="subDomain" required formControlName="subDomainSelect" (selectionChange)="subDomainChange($event)">
+          <mat-option [value]="">--</mat-option>
+          <mat-option *ngFor="let item of subDomain" [value]="item.id">
+            {{item.subDomain}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+    
+ <div class="row ml-3">
+  <div class="col" style="width: 100%; align-content: center;">
+    <mat-form-field>
+      <mat-select placeholder="Skills" [(ngModel)]="selectedSkill"  name="skills" required formControlName="skills" (selectionChange)="captureText($event)">
+        <mat-option [value]=""></mat-option>
+        <mat-option *ngFor="let item of skills" [value]="item.id">
+          {{item.skillName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div class="row  mb-3">
+  <div class="col" style="text-align:center;">
+    <button mat-raised-button color="primary" (click)="getQuestions()">Get Questions</button>
+ </div>
+</div>
+</form>
+<!-- <div class="row alert alert-warning"  *ngIf="!allValuesSelected">
+  Domain, Grade and Sub domain are required
+</div> -->
+<br>
+<div *ngIf="allValuesSelected">
+  <h5 class="card-label"><button mat-raised-button color="primary" (click)="addQuestion()">Add Question</button> &nbsp; for sub domain: &nbsp; {{selectSubdomainText}}. 
+    Grade: {{selectGradeText}}. 
+    Skill: {{selectSkillText}}.</h5>
+</div>
+  <br>
+<div class=".container-fluid">
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let question of questions" [disabled]="true">
+    <mat-expansion-panel-header> 
+      <mat-panel-title>
+        <p class="text-dark">Question No: {{ question.id }} &nbsp;&nbsp; {{ question.topText }} &nbsp;&nbsp; Difficulty:  {{ question.difficultyScore }}</p> 
+      </mat-panel-title>
+      <mat-panel-description  class="right-aligned">
+        <div class="actions" >
+        <span><i class="fas fa-edit btn btn-success fa-3x" (click)="editQuestion(question)" ></i></span>
+      </div>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+
+</mat-accordion>
+</div>
+</div>
+<div class="col" style="border-right: 1px solid grey; max-width: 5px;" *ngIf="showEdit">
+</div>
+<div class="col" [@animationOption2]="showEdit ? 'open': 'close'" [hidden]="!showEdit" >
+ <app-edit-question [displayText]="displayText" [question]="question" *ngIf="showEdit"></app-edit-question>
+</div>
+
+</div>
+</div>

@@ -43,10 +43,10 @@ namespace VslAcademy.API.Controllers
 
         [HttpGet]
         public async Task<IActionResult> getMathDomains(int userId){
-            // if(userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
-            //     return Unauthorized();
-            // if(!HasAccess(PermissionsList.ContentManagement, User.FindFirst(ClaimTypes.GivenName).Value))    
-            //     return Unauthorized();
+            if(userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
+            if(! CommonMethods.HasAccess(PermissionsList.ContentManagement, User.FindFirst(ClaimTypes.GivenName).Value,_memoryCache))   
+                return Unauthorized();
 
              var mathDomains = await _skillsRepo.GetDomains();   
 
@@ -55,10 +55,10 @@ namespace VslAcademy.API.Controllers
 
         [HttpGet("subdomain/{subDomainId}")]
         public async Task<IActionResult> getMathSubDomain(int userId, int subDomainId){
-            // if(userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
-            //     return Unauthorized();
-            // if(!HasAccess(PermissionsList.ContentManagement, User.FindFirst(ClaimTypes.GivenName).Value))    
-            //     return Unauthorized();
+            if(userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
+            if(! CommonMethods.HasAccess(PermissionsList.ContentManagement, User.FindFirst(ClaimTypes.GivenName).Value,_memoryCache))   
+                return Unauthorized();
 
              var mathSubDomains = await _skillsRepo.GetSubDomain(subDomainId);
 
@@ -77,10 +77,10 @@ namespace VslAcademy.API.Controllers
 
         [HttpGet("{subDomainId}")]
         public async Task<IActionResult> getSkills(int subDomainId,int userId){
-            // if(userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
-            //     return Unauthorized();
-            // if(!HasAccess(PermissionsList.ContentManagement, User.FindFirst(ClaimTypes.GivenName).Value))    
-            //     return Unauthorized();
+            if(userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
+            if(! CommonMethods.HasAccess(PermissionsList.ContentManagement, User.FindFirst(ClaimTypes.GivenName).Value,_memoryCache))   
+                return Unauthorized();
 
              var mathSkills = await _skillsRepo.GetSubDomain(subDomainId);   
 
@@ -88,10 +88,10 @@ namespace VslAcademy.API.Controllers
         }
          [HttpPut("{domainId}")]
          public async Task<IActionResult> UpdateDomain(int userId, int domainId, [FromBody] StringDto strDomain) {
-            // if(userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
-            //     return Unauthorized();
-            // if(!HasAccess(PermissionsList.ContentManagement, User.FindFirst(ClaimTypes.GivenName).Value))    
-            //     return Unauthorized();
+            if(userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
+            if(! CommonMethods.HasAccess(PermissionsList.ContentManagement, User.FindFirst(ClaimTypes.GivenName).Value,_memoryCache))   
+                return Unauthorized();
             if (domainId != 0) {
             var domainObj = await _skillsRepo.GetDomain(domainId);    
             domainObj.Domain = strDomain.strData;
@@ -116,10 +116,10 @@ namespace VslAcademy.API.Controllers
          }
          [HttpPost("subdomain/{subDomainId}")]
          public async Task<IActionResult> UpdateSubDomain(int userId, int subDomainId, [FromBody] ReceiveSubdomainGradeMappingDto mappingDto) {
-            // if(userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
-            //     return Unauthorized();
-            // if(!HasAccess(PermissionsList.ContentManagement, User.FindFirst(ClaimTypes.GivenName).Value))    
-            //     return Unauthorized();
+            if(userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
+            if(! CommonMethods.HasAccess(PermissionsList.ContentManagement, User.FindFirst(ClaimTypes.GivenName).Value,_memoryCache))   
+                return Unauthorized();
 
             if (subDomainId == 0) {
             var domainObj = await _skillsRepo.GetSubDomain(subDomainId);    
@@ -145,29 +145,14 @@ namespace VslAcademy.API.Controllers
 
          [HttpGet("subdomains/{domainId}/{gradeId}")]
          public async Task<IActionResult> GetSubDomains(int userId, int domainId, int gradeId) {
-            // if(userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
-            //     return Unauthorized();
-            // if(!HasAccess(PermissionsList.ContentManagement, User.FindFirst(ClaimTypes.GivenName).Value))    
-            //     return Unauthorized();
+            if(userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
+            if(! CommonMethods.HasAccess(PermissionsList.ContentManagement, User.FindFirst(ClaimTypes.GivenName).Value,_memoryCache))   
+                return Unauthorized();
 
             var subDomainObj = await _skillsRepo.GetSubDomains(domainId,gradeId);    
          
             return Ok(subDomainObj);
          }
-
-        private bool HasAccess(string strPermission, string userName) {
-             var userRole =new UserRoles();
-
-             if (_memoryCache.TryGetValue(userName,out userRole))
-            {
-                foreach (var permission in userRole.Role.rolePermissions)
-                {
-                    if (permission.permission.PermissionName.ToString() == strPermission)
-                        return true;
-                }
-            }
-
-            return false;
-        }
     }
 }

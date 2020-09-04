@@ -1,6 +1,8 @@
 using AutoMapper;
 using VslAcademy.API.Dtos.Authorization;
+using VslAcademy.API.Dtos.MathSkills;
 using VslAcademy.API.Models.Authentication;
+using VslAcademy.API.Models.MathSkills;
 
 namespace VslAcademy.API.Helpers
 {
@@ -10,6 +12,8 @@ namespace VslAcademy.API.Helpers
         {
              CreateMap<UserForRegistrationDto,User>()
                 .ForPath(m => m.UserRole.RoleId , opts => opts.MapFrom(src => src.RoleId));
+             CreateMap<ReceiveQuestionDto,Question>();    
+             CreateMap<ReceiveAnswersDto,Answer>();    
         }
     }
 }
