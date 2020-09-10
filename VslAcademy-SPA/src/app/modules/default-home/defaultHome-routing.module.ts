@@ -19,10 +19,17 @@ const moduleRoutes: Routes = [
         { path: 'dashboard', component: DashboardComponent},  
         { path: 'managedomains', component: ManageDomainsComponent, resolve: {domainData: MathDomainResolver}},  
         { path: 'manageskills', component: ManageSkillsComponent, resolve: {searchLkp: ManageSkillsResolver }},  
-        { path: 'managequestions', component: ManageQuestionsComponent, resolve: {searchLkp: ManageSkillsResolver }},  
+        { path: 'managequestions', component: ManageQuestionsComponent, resolve: {searchLkp: ManageSkillsResolver }},
+        {
+          path: 'classes',
+          canActivate: [AuthGuard],
+          loadChildren: () =>
+            import('./classes/classes-routing.module').then((m) => m.ClassesRoutingModule),
+        }
       ], 
 
     },
+   
     { path: '**', redirectTo:'' , pathMatch: 'full' }
 ];
 
