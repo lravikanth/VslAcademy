@@ -13,7 +13,9 @@ namespace VslAcademy.API.Helpers
              CreateMap<UserForRegistrationDto,User>()
                 .ForPath(m => m.UserRole.RoleId , opts => opts.MapFrom(src => src.RoleId));
              CreateMap<ReceiveQuestionDto,Question>();    
-             CreateMap<ReceiveAnswersDto,Answer>();    
+             CreateMap<ReceiveAnswersDto,Answer>()
+                    .ForMember(dest => dest.CreatedDate, opts => opts.UseDestinationValue())
+                    .ForMember(dest => dest.CreatedBy, opts => opts.UseDestinationValue());    
         }
     }
 }

@@ -70,7 +70,11 @@ getFirstLastName(){
 hasAccessTo(str: string) {
   
   const decodedToken = this.jwtHealper.decodeToken(localStorage.getItem('token'));
-  return decodedToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/userdata']?.indexOf(str) > -1;
+  if (decodedToken != null) {
+    return decodedToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/userdata']?.indexOf(str) > -1;
+  } else {
+    null;
+  }  
 }
 
 

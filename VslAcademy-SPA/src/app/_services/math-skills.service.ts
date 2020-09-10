@@ -1,3 +1,4 @@
+import { MathQuestion } from './../_models/math-question';
 import { AlertifyService } from 'src/app/common/alertify-service';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -52,6 +53,10 @@ updateDomain(userId: number,domainId: number, strModel: string) {
 
 getQuestions(userId: number,skillId: number, gradeId: number) {
   return this.http.get(this.baseUrl + userId + '/questions/' + skillId + '/' + gradeId);
+}
+
+addUpdateQuestion(userId: number,skillId: number, gradeId: number, question: MathQuestion) {
+  return this.http.put(this.baseUrl + userId + '/questions/'  + skillId + '/' + gradeId, question);
 }
 
 }

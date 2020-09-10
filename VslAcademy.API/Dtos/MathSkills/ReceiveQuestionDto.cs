@@ -13,7 +13,7 @@ namespace VslAcademy.API.Dtos.MathSkills
         public string? BelowText { get; set; }
         public string? Url { get; set; }
         public string? LateX { get; set; }
-
+        public int? SkillGradeMappingId { get; set; }
         public ReceiveAnswersDto Answer {get; set;}
     }
 }

@@ -1,9 +1,8 @@
 <div class="modal-header bg-success text-white w-100 p-3" >
   <h4 class="modal-title" id="modal-basic-title">Add/Edit Question</h4>
 </div>
-
 <div class="edit-container">
-  <form #editForm="ngForm" id="editForm" style="width: 100%;">  
+  <form novalidate  #editForm="ngForm" id="editForm" style="width: 100%;" (ngSubmit)="update(editForm)">  
   <div class="row">
     <div class="col">
      <label for="disPlayText" class="col-form-label font-weight-bold col-xs-4">{{displayText}} </label>      
@@ -14,7 +13,10 @@
       <label for="topText" class="col-form-label  text-right col-xs-8">Top Text </label>
     </div>
     <div class="col-lg-8" style="text-align:center;">
-          <input type="text" [(ngModel)]="question.topText"  class="form-control" name="topText"/>
+          <input [(ngModel)]="question.topText"  class="form-control" name="topText" #topText="ngModel" id="topText" required/>
+          <div *ngIf="editForm.controls['topText']?.hasError('required') && (editForm.submitted || topText.touched)"
+              class="alert alert-warning p-1"> top text required
+          </div>
       </div> 
   </div>
   <div class="row">
@@ -24,13 +26,16 @@
     </div>
     <div class="col-lg-8" style="text-align:left;">
       <mat-form-field>
-        <mat-select  [(ngModel)]="question.questionType" name="questionType" required class="form-control">
+        <mat-select  [(ngModel)]="question.questionType" name="questionType" required class="form-control" #questionType="ngModel" >
           <mat-option [value]="">--</mat-option>
-          <mat-option *ngFor="let item of questionType" [value]="item.Value">
+          <mat-option *ngFor="let item of questionTypeObj" [value]="item.Value">
             {{item.Name}}
           </mat-option>
         </mat-select>
       </mat-form-field>
+      <div *ngIf="editForm.controls['questionType']?.hasError('required') && (editForm.submitted || questionType.touched)"
+      class="alert alert-warning p-1"> Question Type is required.
+  </div>
     </div>
   </div>
   <div class="row">
@@ -40,54 +45,74 @@
     </div>
     <div class="col-lg-8" style="text-align:left;">
       <mat-form-field>
-        <mat-select  [(ngModel)]="question.difficultyScore" name="difficultyScore" required class="form-control">
+        <mat-select  [(ngModel)]="question.difficultyScore" name="difficultyScore" required class="form-control" required #difficultyScore="ngModel">
           <mat-option [value]="">--</mat-option>
           <mat-option *ngFor="let item of scores" [value]="item">
             {{item}}
           </mat-option>
         </mat-select>
       </mat-form-field>
+      <div *ngIf="editForm.controls['difficultyScore']?.hasError('required') && (editForm.submitted || difficultyScore.touched)"
+          class="alert alert-warning p-1"> Difficulty Score  required
+      </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row" *ngIf="question.questionType == 'Text'">
     <div class="col">
       <label for="ActualText" class="col-form-label  text-right col-xs-8">Actual Text </label>
     </div>
-    <div  class="col-lg-8" style="text-align:center;">
-      <textarea matInput [(ngModel)]="question.actualText" class="form-control" rows="5" cols="50" name="actualText" style="background-color: white;" ></textarea>
+    <div  class="col-lg-8" style="text-align:left;">
+      <textarea  [(ngModel)]="question.actualText" #actualText="ngModel" id="actualText" class="form-control" required rows="5" cols="50" name="actualText" style="background-color: white;" ></textarea>
+      <div *ngIf="editForm.controls['actualText']?.hasError('required') && (editForm.submitted || actualText.touched)"
+          class="alert alert-warning p-1"> Actual text required
+      </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row mt-2">
     <div class="col">
-      <label for="belowText" class="col-form-label  text-right col-xs-8">Top Text </label>
+      <label for="belowText" class="col-form-label  text-right col-xs-8">Below Text </label>
     </div>
     <div class="col-lg-8" style="text-align:center;">
           <input type="text" [(ngModel)]="question.belowText"  class="form-control" name="belowText"/>
       </div> 
   </div>
-  <div class="row">
+  <div class="row mt-2" *ngIf="question.questionType == 'Latex'">
   <div class="col">
     <label for="lateX" class="col-form-label  text-right col-xs-8">LateX Text </label>
   </div>
-  <div class="col-lg-8" style="text-align:center;">
-        <input type="text" [(ngModel)]="question.lateX"  class="form-control" name="lateX" value="freaking complex"/>
+  <div class="col-lg-8" style="text-align:left;">
+    <textarea matInput [(ngModel)]="question.lateX"  class="form-control" rows="5" cols="50"  name="lateX" #lateX="ngModel" required style="background-color: white;"> </textarea>
+    <div *ngIf="editForm.controls['lateX']?.hasError('required') && (editForm.submitted || lateX.touched)"
+    class="alert alert-warning p-1"> Latex question text required.
+  </div>
   </div> 
+
+</div>
+<div class="row" *ngIf="question.questionType == 'Image'">
+  <div class="col">
+    <label for="fileUpload" class="col-form-label  text-left col-xs-8">Image Upload(only jpg/png files) </label>
+  </div>
+  <div class="col-lg-8" style="text-align:center;">
+    <input type="file" ng2FileSelect [uploader]="uploader"  class="mt-3" name="file" [(ngModel)]="question.file" #file="ngModel" required/>
+    <div class="progress mb-4">
+      <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+    </div>
+    <div *ngIf="editForm.controls['file']?.hasError('required') && (editForm.submitted || file.touched)"
+    class="alert alert-warning p-1"> Image file is required.
+  </div>
+      <div>
+          <button type="button" class="btn btn-success btn-s"
+          (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+      <span class="fa fa-upload"></span> Upload 
+      </button>
+</div>
+ 
+</div>
 </div>
 <div class="row">
   <div class="col">
-    <label for="lateX" class="col-form-label  text-left col-xs-8">Image Upload(only jpg/png files) </label>
-  </div>
-  <div class="col-lg-8" style="text-align:center;">
-    <input type="file" ng2FileSelect [uploader]="uploader" class="mt-3" />
-    <div class="progress mb-4">
-      <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
-  </div>
-    <button type="button" class="btn btn-success btn-s"
-    (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
-<span class="fa fa-upload"></span> Upload 
-</button>
-<div class="row">
-  <p>Answer Section</p>
+  <h5 class="modal-title" id="modal-basic-title">Answer Section</h5>
+</div>
 </div>
 <div class="row">
   <div class="col">
@@ -97,20 +122,111 @@
         <input type="text" [(ngModel)]="question.answer.topText"  class="form-control" name="answerTopText" />
   </div> 
 </div>
-<div class="row">
+<div class="row mt-2">
   <div class="col">
     <label for="answerType" class="col-form-label  text-right col-xs-8">Answer Type </label>
   </div>
   <div class="col-lg-8" style="text-align:center;">
-    <mat-radio-group formControlName="gender">
-      <mat-label>Gender:</mat-label>&nbsp;
-      <mat-radio-button color="primary" value="male">Male</mat-radio-button
-      >&nbsp;
-      <mat-radio-button color="primary" value="female">Female</mat-radio-button>
+    <mat-radio-group  [(ngModel)]="question.answer.answerType" class="form-control" id="answerType"  name="answerType" id="answerType" #answerType="ngModel" required>
+      <mat-radio-button color="primary" value="options" name="answerType">Options</mat-radio-button>&nbsp;
+      <mat-radio-button color="primary" value="trueFalse" name="answerType">TrueFalse</mat-radio-button>
+    </mat-radio-group>    
+    <div *ngIf="editForm.controls['answerType']?.hasError('required') && editForm.submitted"
+    class="alert alert-warning p-1"> Answer Type is required.
+  </div>   
+  </div> 
+</div>
+
+
+
+<div class="row mt-2" *ngIf="question.answer.answerType == 'options'">
+  <div class="col">
+    <label for="opt1" class="col-form-label  text-right col-xs-8">Opt A</label>
+  </div>
+  <div class="col-lg-8" style="text-align:center;">
+        <input type="text"  class="form-control" name="opt1" [(ngModel)]="question.answer.opt1" #opt1="ngModel" required />
+        <div *ngIf="editForm.controls['opt1']?.hasError('required') && (editForm.submitted || opt1.touched)"
+    class="alert alert-warning p-1"> Option A required.
+  </div>  
+  </div> 
+</div>
+<div class="row mt-2" *ngIf="question.answer.answerType == 'options'">
+  <div class="col">
+    <label for="opt2" class="col-form-label  text-right col-xs-8">Opt B</label>
+  </div>
+  <div class="col-lg-8" style="text-align:center;">
+        <input type="text" [(ngModel)]="question.answer.opt2"  class="form-control" name="opt2" #opt2="ngModel" required />
+        <div *ngIf="editForm.controls['opt2']?.hasError('required') && (editForm.submitted || opt2.touched)"
+        class="alert alert-warning p-1"> Option B required.
+      </div> 
+  </div> 
+</div>
+
+<div class="row mt-2" *ngIf="question.answer.answerType == 'options'">
+  <div class="col">
+    <label for="opt3" class="col-form-label  text-right col-xs-8">Opt C</label>
+  </div>
+  <div class="col-lg-8" style="text-align:center;">
+        <input type="text"   class="form-control" name="opt3" [(ngModel)]="question.answer.opt3" #opt3="ngModel" required  />
+        <div *ngIf="editForm.controls['opt3']?.hasError('required') && (editForm.submitted || opt3.touched)"
+        class="alert alert-warning p-1"> Option C required.
+      </div> 
+
+  </div> 
+</div>
+
+<div class="row mt-2" *ngIf="question.answer.answerType == 'options'">
+  <div class="col">
+    <label for="opt4" class="col-form-label  text-right col-xs-8">Opt D</label>
+  </div>
+  <div class="col-lg-8" style="text-align:center;">
+        <input type="text" class="form-control" name="opt4" [(ngModel)]="question.answer.opt4" #opt4="ngModel" required/>
+        <div *ngIf="editForm.controls['opt4']?.hasError('required') && (editForm.submitted || opt4.touched)"
+        class="alert alert-warning p-1"> Option D required.
+      </div> 
+  </div> 
+</div>
+
+<div class="row mt-2" *ngIf="question.answer.answerType == 'options'">
+  <div class="col">
+    <label for="opt4" class="col-form-label  text-right col-xs-8">Correct Answer</label>
+  </div>
+  <div class="col-lg-8" style="text-align:center;">
+    
+    <mat-form-field appearance="fill">
+      <mat-select multiple name="rightSelectAnswerCtl"  [(ngModel)]="question.answer.rightSelectAnswer" class="form-control"  #rightSelectAnswerCtl="ngModel" required>
+        <mat-option value='A'>A</mat-option>
+        <mat-option value='B'>B</mat-option>
+        <mat-option value='C'>C</mat-option>
+        <mat-option value='D'>D</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div *ngIf="editForm.controls['rightSelectAnswerCtl']?.hasError('required') && (editForm.submitted || rightSelectAnswerCtl.touched)"
+    class="alert alert-warning p-1"> Correct options answer(s) is required.
+  </div> 
+  </div> 
+</div>
+
+<div class="row mt-2"  *ngIf="question.answer.answerType == 'trueFalse'">
+  <div class="col">
+    <label for="answerTrueFalse" class="col-form-label  text-right col-xs-8">Correct Answer </label>
+  </div>
+  <div class="col-lg-8" style="text-align:center;">
+    <mat-radio-group name="answerTrueFalseCtl" id="answerTrueFalseCtl"  [(ngModel)]="question.answer.rightSelectAnswer" class="form-control" #answerTrueFalseCtl="ngModel" required>
+      <mat-radio-button color="primary" value="True" name="answerTrueFalseCtl">True</mat-radio-button>&nbsp;
+      <mat-radio-button color="primary" value="False" name="answerTrueFalseCtl">False</mat-radio-button>
     </mat-radio-group>       
+    <div *ngIf="editForm.controls['answerTrueFalseCtl']?.hasError('required') && (editForm.submitted || answerTrueFalseCtl.touched)"
+    class="alert alert-warning p-1"> True or Flase answer(s) is required. </div> 
   </div> 
 </div>
-  </div> 
+<div class="row">
+  <div class="col" style="text-align: center;">
+    <button type="submit"  class="btn btn-success mr-2" >Add/Update</button>
 </div>
+</div>
+
 </form>
 </div>
+<p> {{ question | json }} </p>
+

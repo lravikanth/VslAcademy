@@ -1,3 +1,4 @@
+import { MathAnswer } from './../../../../_models/math-answer';
 import { EditQuestionComponent } from './../edit-question/edit-question.component';
 import { MathQuestion } from './../../../../_models/math-question';
 import { MathSubdomain } from './../../../../_models/math-subdomain';
@@ -144,6 +145,10 @@ export class ManageQuestionsComponent implements OnInit {
     }
     let question = new MathQuestion();
     question.id = 0;
+    question.topText='';
+    question.answer = new MathAnswer();
+    question.answer.topText='';
+    this.question = question;
     this.editQuestion(question);
   }
   showSearch() {
@@ -153,28 +158,15 @@ export class ManageQuestionsComponent implements OnInit {
   editQuestion(question: MathQuestion) {
 
     this.question = question;
-    this.displayText =  'Question#' +  (question.id === 0) ? 'New' : question.id.toString();
+    this.displayText = 'Question#';
+    this.displayText +=  (question.id === 0) ? 'New' : question.id.toString();
     this.displayText += ' for Skill: ' + this.selectSkillText + '. Grade: ' + this.selectGradeText;
+    this.questions.unshift(this.question);
     this.showEdit = true;
-   // const ref = this.modal.open(EditQuestionComponent);
-    // ref.componentInstance.question = question;
-    // ref.componentInstance.displayText = 'Question#' +  (question.id === 0) ? 'New' : question.id + ' for Skill: ' + this.selectSkillText;
-    // ref.componentInstance.displayText +=  '. Grade: ' + this.selectGradeText;
+  }
 
-    // ref.result.then((yes) => {
-    //   console.log(yes);
-    //   if (question.id !== 0) {
-    //     this.questions.find(y=> {
-    //       if (y.id === yes.id) {
-    //         y.topText = yes.topText;
-    //         this.ref.detectChanges();
-    //       }
-    //     });
-    //   } else {
-    //     //this.getSkills();
-    //   }
-    // }, (cancel) => {
-    //   console.log('click NO');
-    // });
+  closeEditPanel(que: MathQuestion) {
+    this.question = que;
+    this.showEdit = false;
   }
 }
